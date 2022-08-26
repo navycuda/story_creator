@@ -15,8 +15,9 @@ The story teller application based losely around D&D campaign creation.
     [ ] - Functions
     [ ] - Database
     [ ] - UI
-      [ ] - Target Devices
+      [X] - Target Devices
         1st - Desktop
+        2nd - Tablet
       [ ] - Single or Multi page app
       [ ] - Story presentation
     [ ] - Finalizing template setup
