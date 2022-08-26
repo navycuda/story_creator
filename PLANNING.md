@@ -8,8 +8,8 @@ The story teller application based losely around D&D campaign creation.
 ## FRIDAY AUGEST 26, 2022
 ### BASE PLANNING
 
-  [ ] - Scheduling conflicts
-    [ ] - Shane - Drivers licence - Thursday Sept 1.
+  [X] - Scheduling conflicts
+    [X] - Shane - Drivers licence - Thursday Sept 1.
 
   [ ] - Core app planning
     [ ] - Functions
@@ -23,6 +23,9 @@ The story teller application based losely around D&D campaign creation.
           individual development goals
     [ ] - Conventions
       [ ] - git
+        Lots of communications!
+        sperate branches,
+          collabortate on reassembly
       [ ] - naming
       [ ] - developer overlap 
     [ ] - scheduling and deadlines for features
