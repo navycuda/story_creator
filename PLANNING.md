@@ -21,8 +21,10 @@ The story teller application based losely around D&D campaign creation.
     [ ] - Finalizing template setup
           Get the master to the point that we can branch off for 
           individual development goals
-    [ ] - Naming conventions
-    [ ] - git conventions
+    [ ] - Conventions
+      [ ] - git
+      [ ] - naming
+      [ ] - developer overlap 
     [ ] - scheduling and deadlines for features
 
 ## Goals for Monday tailgate
