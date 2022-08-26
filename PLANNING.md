@@ -9,6 +9,8 @@ The story teller application based losely around D&D campaign creation.
 ### BASE PLANNING
 
   [ ] - Scheduling conflicts
+    [ ] - Shane - Drivers licence - Thursday Sept 1.
+
   [ ] - Core app planning
     [ ] - Functions
     [ ] - Database
