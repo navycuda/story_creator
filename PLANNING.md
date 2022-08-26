@@ -22,3 +22,6 @@ The story teller application based losely around D&D campaign creation.
     [ ] - Naming conventions
     [ ] - git conventions
     [ ] - scheduling and deadlines for features
+
+## Goals for Monday tailgate
+
