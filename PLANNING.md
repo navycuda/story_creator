@@ -13,13 +13,23 @@ The story teller application based losely around D&D campaign creation.
 
   [ ] - Core app planning
     [ ] - Functions
+      USERS
+        Start story
+          Owns story
+        Submit to other stories
+          can only contribute, cannot own the story
+
+
+          
+
     [ ] - Database
-    [ ] - UI
+    [X] - UI
       [X] - Target Devices
         1st - Desktop
         2nd - Tablet
-      [ ] - Single or Multi page app
-      [ ] - Story presentation
+      [X] - Single or Multi page app
+        Mult-page App
+      [X] - Story presentation
     [ ] - Finalizing template setup
           Get the master to the point that we can branch off for 
           individual development goals
