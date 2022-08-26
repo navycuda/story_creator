@@ -21,3 +21,4 @@ The story teller application based losely around D&D campaign creation.
           individual development goals
     [ ] - Naming conventions
     [ ] - git conventions
+    [ ] - scheduling and deadlines for features
