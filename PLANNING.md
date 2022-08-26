@@ -17,6 +17,7 @@ The story teller application based losely around D&D campaign creation.
     [ ] - UI
       [ ] - Target Devices
       [ ] - Single or Multi page app
+      [ ] - Story presentation
     [ ] - Finalizing template setup
           Get the master to the point that we can branch off for 
           individual development goals
