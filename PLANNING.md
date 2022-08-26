@@ -16,19 +16,20 @@ The story teller application based losely around D&D campaign creation.
     [ ] - Database
     [ ] - UI
       [ ] - Target Devices
+        1st - Desktop
       [ ] - Single or Multi page app
       [ ] - Story presentation
     [ ] - Finalizing template setup
           Get the master to the point that we can branch off for 
           individual development goals
     [ ] - Conventions
-      [ ] - git
+      [X] - git
         Lots of communications!
         sperate branches,
           collabortate on reassembly
       [ ] - naming
-      [ ] - developer overlap 
-    [ ] - scheduling and deadlines for features
+      [X] - developer overlap 
+    [X] - scheduling and deadlines for features
 
 ## Goals for Monday tailgate
 
