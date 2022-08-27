@@ -59,4 +59,4 @@ The story teller application based losely around D&D campaign creation.
                   '/id:/contribute'
                   '/most_popular'
                   '/most_recent'
-
+[ ] -  inquire about it's possible to utilize https://rapidapi.com/bionic-reading-bionic-reading-default/api/bionic-reading1/details API to change all long forms of text to bionic reading.
