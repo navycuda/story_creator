@@ -44,3 +44,19 @@ The story teller application based losely around D&D campaign creation.
 
 ## Goals for Monday tailgate
 
+[ ] - come up with a title for the app
+  idea 1 - Storyteller
+[ ] - meetup with a mentor/instructor to get some idea of how realistic our goals are
+[ ] - finalize colour scheme
+[ ] - pick fonts
+[ ] - story summary vs default (first one or two sentences)
+[ ] - endpoints = '/'
+                  '/register'
+                  '/id:'   <-- login then redirect to main page
+                  '/profile/id:' <---- for viewing yours and others' profile pages
+                  '/id:/my_stories' <--- page of all stories
+                  '/id:/submit'
+                  '/id:/contribute'
+                  '/most_popular'
+                  '/most_recent'
+
