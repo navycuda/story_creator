@@ -19,5 +19,17 @@ $(() => {
   $('#fetch-user').on('click', () => {
     const id = $('#user-id').val();
     console.log(id);
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${id}`
+    })
+      .done((response) => {
+        const $usersList = $('#users');
+        const user = response;
+        $usersList.empty();
+
+
+        $(`<li class="user">`).text(user.name).appendTo($usersList);
+      });
   });
 });
