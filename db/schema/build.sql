@@ -21,6 +21,6 @@ GRANT ALL PRIVILEGES ON DATABASE
   TO
   story_creator
 ;
-
+\i db/schema/01_users.sql;
 
 -- \i db/schema/01_users.sql;
