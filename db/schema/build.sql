@@ -1,6 +1,7 @@
 /*
 \i db/schema/build.sql
 */
+\c navycuda navycuda;
 DROP DATABASE
 IF EXISTS
   story_creator
@@ -21,6 +22,7 @@ GRANT ALL PRIVILEGES ON DATABASE
   TO
   story_creator
 ;
-\i db/schema/01_users.sql;
+\c story_creator story_creator;
+-- \i db/schema/01_users.sql;
 
 -- \i db/schema/01_users.sql;
