@@ -27,4 +27,4 @@ const getUser = (id) => {
       return data.rows[0];
     });
 };
-module.exports = { getUsers };
+module.exports = { getUsers, getUser };
