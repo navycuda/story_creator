@@ -20,5 +20,18 @@ router.get('/', (req, res) => {
         .json({ error: err.message });
     });
 });
+router.get('/:id', (request, response) => {
+  const id = request.params.id;
+  userQueries.getUser(id)
+    .then((user) => {
+      console.log(`get api/users/:id`, id);
+      response.json({ user });
+    })
+    . catch((error) => {
+      response
+        .status(500)
+        .json({ error: error.message });
+    });
+});
 
 module.exports = router;
