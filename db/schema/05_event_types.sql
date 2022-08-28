@@ -1,7 +1,7 @@
 /*
 \i db/schema/event_types.sql
 */
-IF EXISTS DROP TABLE
+DROP TABLE IF EXISTS
   event_types CASCADE
 ;
 CREATE TABLE

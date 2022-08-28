@@ -11,7 +11,7 @@ CREATE TABLE
       users(id)
       ON DELETE CASCADE,
     story_id INTEGER REFERENCES
-      storys(id)
+      stories(id)
       ON DELETE CASCADE
   )
 ;

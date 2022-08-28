@@ -1,7 +1,7 @@
 /*
 \i db/schema/07_votes.sql
 */
-IF EXISTS DROP TABLE
+DROP TABLE IF EXISTS
   votes CASCADE
 ;
 CREATE TABLE
@@ -14,7 +14,7 @@ CREATE TABLE
       users(id)
       ON DELETE CASCADE,
     story_id INTEGER REFERENCES
-      stories
+      stories(id)
       ON DELETE CASCADE,
     up_votes INTEGER,
     dn_votes INTEGER

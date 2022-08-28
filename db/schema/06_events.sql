@@ -1,7 +1,7 @@
 /*
 \i db/schema/05_events.sql
 */
-IF EXISTS DROP TABLE
+DROP TABLE IF EXISTS
   events CASCADE
 ;
 CREATE TABLE
@@ -11,7 +11,7 @@ CREATE TABLE
       stories(id)
       ON DELETE CASCADE,
     owner_id INTEGER REFERENCES
-      owners(id)
+      users(id)
       ON DELETE CASCADE,
     event_type_id INTEGER REFERENCES
       event_types(id)
