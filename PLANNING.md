@@ -85,3 +85,6 @@ database tables have been modeled as objects.  Each object will be responsible f
 
   From the application side I believe the upvote class should be made by combining all the upvote values into one...
     > changed to votes, gave up and dn vote values for overall picture
+
+#### Require explaination of how db:reset works
+  Since I built my own sort of manual build file, I finally got around to trying the db:reset and it does not work with the way I currently have my queries setup.
