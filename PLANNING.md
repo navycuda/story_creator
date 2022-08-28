@@ -63,5 +63,8 @@ The story teller application based losely around D&D campaign creation.
 
 ### Db design notes
 
+#### cast
   For the time being I'm leaving out cast as I feel it is redundant to he job of the character table, however I'm not going to remove it from the erd yet.
 
+#### assets
+  Also leaving assests out until a bit further into design.  I don't have a clear picture of how I'm going to interact with the front end, so I'll leave options open.
