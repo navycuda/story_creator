@@ -63,7 +63,7 @@ The story teller application based losely around D&D campaign creation.
 
 ### Db design notes
 
-Theory of operation:
+#### Theory of operation
 
 database tables have been modeled as objects.  Each object will be responsible for its own interaction with the database, so from the server code perspective we're only dealing with classes.  I believe this will also dramatically simplify transferring the different datatypes and may even further open up a serious look at using a single page app.
 
