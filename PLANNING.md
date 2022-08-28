@@ -88,3 +88,5 @@ database tables have been modeled as objects.  Each object will be responsible f
 
 #### Require explaination of how db:reset works
   Since I built my own sort of manual build file, I finally got around to trying the db:reset and it does not work with the way I currently have my queries setup.
+
+  db:reset now works
