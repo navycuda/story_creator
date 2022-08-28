@@ -68,3 +68,6 @@ The story teller application based losely around D&D campaign creation.
 
 #### assets
   Also leaving assests out until a bit further into design.  I don't have a clear picture of how I'm going to interact with the front end, so I'll leave options open.
+
+#### upvotes
+  Added vote.  The idea here is that a vote value is applied to the vote.  This will allow there to be both upvotes and down votes, if so desired.
