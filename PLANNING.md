@@ -63,6 +63,17 @@ The story teller application based losely around D&D campaign creation.
 
 ### Db design notes
 
+Theory of operation:
+
+database tables have been modeled as objects.  Each object will be responsible for its own interaction with the database, so from the server code perspective we're only dealing with classes.  I believe this will also dramatically simplify transferring the different datatypes and may even further open up a serious look at using a single page app.
+
+#### need Forms
+  [ ] - Create/Edit User
+  [ ] - Create/Edit Story
+  [ ] - Create/Edit Event
+  [ ] - Create/Edit Event Type
+  [ ] - Create/Edit Character
+
 #### cast
   For the time being I'm leaving out cast as I feel it is redundant to he job of the character table, however I'm not going to remove it from the erd yet.
 
