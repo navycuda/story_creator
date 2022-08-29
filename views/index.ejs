@@ -19,12 +19,16 @@
 </head>
 
 <body>
+  <input type="hidden" id="user-id" value="<%= user.id %>" />
   <header>
+    <% if (!user) { %>
     <button id="user-login">login</button>
     <button id="user-registration">registration</button>
+    <% } else { %>
     <button id="user-profile">profile</button>
     <button id="user-stories">my stories</button>
     <button id="user-contributions">my contributions</button>
+    <% } %>
   </header>
 
   <main></main>
