@@ -39,13 +39,20 @@ $(() => {
     User.getHtmlRegistration().appendTo($contentArea);
   });
 
-
   $userProfile.on('click', () => {
     $contentArea.empty();
     user.getHtmlDetails().appendTo($contentArea);
   });
 
+  $userStories.on('click', () => {
+    $contentArea.empty();
+    user.getHtmlStories().appendTo($contentArea);
+  });
 
+  $userContributions.on('click', () => {
+    $contentArea.empty();
+    user.getHtmlContributions().appendTo($contentArea);
+  });
 
 
 });
