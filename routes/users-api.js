@@ -8,6 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
+const User = require('../db/models/User');
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
@@ -22,9 +23,14 @@ router.get('/', (req, res) => {
 });
 router.get('/:id', (request, response) => {
   const id = request.params.id;
-  userQueries.getUser(id)
-    .then((user) => {
-      console.log(`get api/users/:id`, id);
+  console.log(`get api/users/:id`, id);
+  userQueries.getUser(Number(id))
+    .then((db_user) => {
+
+      const user = new User(db_user);
+
+
+      console.log(`get api/users/:id <user>`, user);
       response.json({ user });
     })
     . catch((error) => {
