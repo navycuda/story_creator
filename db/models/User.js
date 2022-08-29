@@ -5,9 +5,10 @@
 class User {
   // Remember the id, it's issued by the database
   constructor(db_user) {
-    this.name = db_user.name;
-    this.email = db_user.email;
-    this.password = db_user.password;
+    console.log(`in User constructor :`, db_user);
+    for (const [ key, value ] of Object.entries(db_user)) {
+      this[key] = value;
+    }
   }
   getDetails() {
     return 'There be details here';
