@@ -12,21 +12,25 @@ $(() => {
   const $userStories = $('#user-stories');
   const $userContributions = $('#user-contributions');
 
+  const $userId = $('#user-id').val();
+
+  if($userId) {
+    console.log(`userId`, $userId);
+  }
+
   const $contentArea = $('main');
 
-  if (!userId) {
 
-    $userLogin.on('click', () => {
-      $contentArea.empty();
-      User.getHtmlLogin().appendTo($contentArea);
-    });
+  $userLogin.on('click', () => {
+    $contentArea.empty();
+    User.getHtmlLogin().appendTo($contentArea);
+  });
 
-    $userRegistration.on('click', () => {
-      $contentArea.empty();
-      User.getHtmlRegistration().appendTo($contentArea);
-    });
+  $userRegistration.on('click', () => {
+    $contentArea.empty();
+    User.getHtmlRegistration().appendTo($contentArea);
+  });
 
-  }
 
   $userProfile.on('click', () => {
     $contentArea.empty();
