@@ -10,8 +10,8 @@ class User {
       this[key] = value;
     }
   }
-  getDetails() {
-    return 'There be details here';
+  getSingleDetail() {
+    return $(`<li class="user">`).text(this.name);
   }
 }
 
