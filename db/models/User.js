@@ -17,13 +17,22 @@ class User {
     console.log(this);
   }
   getHtmlDetails() {
-    const result = $('<div>');
-    const name = $('<h2>').text(this.name);
-    const email = $('<span>').text(this.email);
+    const $details = $('<div>');
+    const $name = $('<h2>').text(this.name);
+    const $email = $('<span>').text(this.email);
 
-    result.append(name, email);
+    $details.append($name, $email);
 
-    return result;
+    return $details;
+  }
+  static getHtmlLogin() {
+    const $login = $('<div>');
+    const $email = $('<input>').attr('type', 'text').val('Email');
+    const $password = $('<input>').attr('type', 'password');
+
+    $login.append($email, $password);
+
+    return $login;
   }
 }
 
