@@ -1,9 +1,9 @@
 // db/models/htmlModels.js
 
-// name: VARCHAR(255)
-// email: VARCHAR(255)
-// password: VARCHAR(255)
 class User {
+  // name: VARCHAR(255)
+  // email: VARCHAR(255)
+  // password: VARCHAR(255)
   // Remember the id, it's issued by the database
   constructor(db_user) {
     console.log(`in User constructor :`, db_user);
@@ -28,10 +28,34 @@ class User {
   }
 }
 
+class Story {
+  // name
+  // contributor_id
+  // owner_id
+  // created_at
+  // started_at
+  // completed_at
+
+  constructor(name, owner_id) {
+    this.name = name;
+    this.owner_id = owner_id;
+
+    const timeStamp = Date.now();
+
+    this.created_at = timeStamp;
+    this.started_at = timeStamp;
+    this.completed_at = timeStamp;
+  }
+}
+
+// Currently there is some use of these classes server side.
+// This try catch prevents the browswer from throwing a
+// reference error on module
 try {
   if (module) {
     module.exports = {
-      User
+      User,
+      Story
     };
   }
 } catch (error) {
