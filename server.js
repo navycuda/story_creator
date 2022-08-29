@@ -59,35 +59,40 @@ const setTemplateVars = async(request) => {
   let user;
   console.log('setTemplateVars, request.params : ', request.params);
   if (!request) {
+    console.log('!request');
     return noUser;
   }
-  if (!request.session) {
+  console.log(`!request.session, just before, request.session`, request.session);
+  if (!request.session.id) {
     const id = request.params.id;
+    console.log(`!request.session request.params.id`, id);
     user = await userQueries.getUser(id);
     if (user) {
       request.session.id = id;
     }
     return templateVars.user = user ? user : noUser;
   }
+  console.log('setTemplateVars passed the ifs');
   user = await userQueries.getUserByRequest(request);
+  console.log('setTemplateVars after the user instantiationations : ', user);
   return templateVars.user = user ? user : noUser;
 };
 
 app.get('/', async(request, response) => {
-  console.log('root / request', request);
-  // const templateVars = await setTemplateVars(request);
-  response.render('index', noUser);
+  console.log('root / request', request.session);
+  const templateVars = await setTemplateVars(request);
+  response.render('index', templateVars);
 });
 
 /// Temp login/logout routes
 app.get('/login/:id', async(request, response) => {
-  console.log(`login/:id request.params`);
+  console.log(`login/:id request.params`, request.params);
   const templateVars = await setTemplateVars(request);
-  response.json(templateVars);
+  response.json('index', templateVars);
 });
 app.get('/logout', (request, response) => {
   request.session = null;
-  response.render('index', noUser);
+  response.render('index', setTemplateVars());
 });
 
 
