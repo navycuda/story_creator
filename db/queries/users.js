@@ -29,4 +29,12 @@ const getUser = (id) => {
       return data.rows[0];
     });
 };
-module.exports = { getUsers, getUser };
+const getUserByRequest = (request) => {
+
+};
+
+module.exports = {
+  getUsers,
+  getUser,
+  getUserByRequest
+};
