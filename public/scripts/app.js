@@ -1,3 +1,9 @@
+try {
+  const { User } = require("../../db/models/htmlModels");
+} catch {
+  // do nothing.
+}
+
 // Client facing scripts here
 $(() => {
   const $userLogin = $('#user-login');
@@ -8,17 +14,23 @@ $(() => {
 
   const $contentArea = $('main');
 
-  $userLogin.on('click', () => {
-    $contentArea.empty();
-    User.getHtmlLogin().appendTo($contentArea);
-  });
+  if (!user) {
 
-  $userRegistration.on('click', () => {
-    alert('Illegal registration attempt.  Commando unit dispatched');
-  });
+    $userLogin.on('click', () => {
+      $contentArea.empty();
+      User.getHtmlLogin().appendTo($contentArea);
+    });
+
+    $userRegistration.on('click', () => {
+      $contentArea.empty();
+      User.getHtmlRegistration().appendTo($contentArea);
+    });
+
+  }
 
   $userProfile.on('click', () => {
-    alert('Unauthorized access, formatting primary drive');
+    $contentArea.empty();
+    User.getHtmlDetails().appendTo($contentArea);
   });
 
 
