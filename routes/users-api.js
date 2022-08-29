@@ -11,7 +11,7 @@ const userQueries = require('../db/queries/users');
 const {
   User,
   Story
-} = require('../db/models/User');
+} = require('../db/models/htmlModels');
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
