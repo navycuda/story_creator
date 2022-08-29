@@ -25,11 +25,7 @@ router.get('/:id', (request, response) => {
   const id = request.params.id;
   console.log(`get api/users/:id`, id);
   userQueries.getUser(Number(id))
-    .then((db_user) => {
-
-      const user = new User(db_user);
-
-
+    .then((user) => {
       console.log(`get api/users/:id <user>`, user);
       response.json({ user });
     })
