@@ -16,11 +16,12 @@ class User {
   outputToConsole() {
     console.log(this);
   }
-  getHtml_UserDetails() {
+  getHtmlDetails() {
     const result = $('<div>');
     const name = $('<h2>').text(this.name);
     const email = $('<span>').text(this.email);
 
+    result.append(name, email);
 
     return result;
   }
