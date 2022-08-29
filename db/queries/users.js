@@ -22,7 +22,7 @@ const getUser = (id) => {
       users.id = $1
     ;
   `;
-  const vars = [ id ];
+  const vars = [ Number(id) ];
   return db.query(query, vars)
     .then(data => {
       const result = data.rows[0];
@@ -33,6 +33,7 @@ const getUser = (id) => {
 };
 const getUserByRequest = async(request) => {
   const id = request.session.id;
+  console.log(`getUserByRequest id : `, id)
   const user = await getUser(id);
   if (!user) {
     return null;
