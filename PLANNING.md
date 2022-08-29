@@ -93,5 +93,9 @@ database tables have been modeled as objects.  Each object will be responsible f
 
   db:reset now works
 
-### Some other things to think about
+### Some other things to think about / TODO
+
+  [ ] - install cookie-sessions for login
+  [ ] - decide if completing the login/registration page 
+        or taking the easy way out
 
