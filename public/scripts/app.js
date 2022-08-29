@@ -13,9 +13,28 @@ $(() => {
   const $userContributions = $('#user-contributions');
 
   const $userId = $('#user-id').val();
+  let $user;
 
   if($userId) {
     console.log(`userId`, $userId);
+
+
+
+    $('#fetch-user').on('click', () => {
+      const id = $('#user-id').val();
+      console.log(id);
+      $.ajax({
+        method: 'GET',
+        url: `/api/users/${id}`
+      })
+        .done((response) => {
+          const $usersList = $('#users');
+          user = new User(response.user);
+        });
+    });
+
+
+
   }
 
   const $contentArea = $('main');
@@ -34,7 +53,7 @@ $(() => {
 
   $userProfile.on('click', () => {
     $contentArea.empty();
-    User.getHtmlDetails().appendTo($contentArea);
+    user.getHtmlDetails().appendTo($contentArea);
   });
 
 
