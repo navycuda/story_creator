@@ -12,6 +12,7 @@ const getUsers = () => {
  * @returns a single user, if they exist
  */
 const getUser = (id) => {
+  console.log(`  getUser(${id})`);
   const query = `
     SELECT
       *
@@ -24,6 +25,7 @@ const getUser = (id) => {
   const vars = [ id ];
   return db.query(query, vars)
     .then(data => {
+      console.log(data.rows);
       return data.rows[0];
     });
 };
