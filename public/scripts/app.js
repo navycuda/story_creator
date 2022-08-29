@@ -1,11 +1,15 @@
 // Client facing scripts here
 $(() => {
-  const $login = $('#user-login');
-  const $registration = $('user-registration');
-  const $profile = $('user-profile');
+  const $userLogin = $('#user-login');
+  const $userRegistration = $('#user-registration');
+  const $userProfile = $('#user-profile');
+  const $userStories = $('#user-stories');
+  const $userContributions = $('#user-contributions');
 
 
-
+  $userLogin.on('click', () => {
+    alert('login attempt detected.  Nuclear launch initiated.  Unable to cancel.  Good job bro.');
+  });
 
 
 
