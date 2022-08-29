@@ -28,12 +28,35 @@ class User {
   }
   static getHtmlLogin() {
     const $login = $('<div>');
-    const $email = $('<input>').attr('type', 'text').val('Email');
-    const $password = $('<input>').attr('type', 'password');
+    const $email = $('<input>')
+      .attr('type', 'text')
+      .attr('placeholder', 'Email');
+    const $password = $('<input>')
+      .attr('type', 'password')
+      .attr('placeholder', 'Password');
+    const $submit = $('<button>')
+      .text('login');
 
-    $login.append($email, $password);
+    return $login.append($email, $password, $submit);
+  }
+  static getHtmlRegistration() {
+    const $userRegistration = $('<div>');
+    const $name = $('<input>')
+      .attr('type', 'text')
+      .attr('placeholder', 'username');
+    const $email = $('<input>')
+      .attr('type', 'email')
+      .attr('placeholder', 'email');
+    const $password = $('<input>')
+      .attr('type', 'password')
+      .attr('placeholder', 'password');
+    const $confirmPassword = $('<input>')
+      .attr('type', 'password')
+      .attr('placeholder', 'confirm password');
+    const $submit = $('<button>')
+      .text('register');
 
-    return $login;
+    return $userRegistration.append($name, $email, $password, $confirmPassword, $submit);
   }
 }
 
