@@ -45,7 +45,13 @@ app.use('/users', usersRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const user = {
+    id: null
+  };
+  const templateVars = {
+    user
+  };
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {
