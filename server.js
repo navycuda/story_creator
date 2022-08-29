@@ -51,19 +51,21 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-const getUserFromRequest = (request) => {
-
-
-
-}
-
 app.get('/', (request, response) => {
-  const user = getUserFromRequest(request);
-  const templateVars = {
-    user
-  };
+  const templateVars = {};
+  const user = userQueries.getUserByRequest(request);
+  templateVars.user = user ? user : { user:{ id:null } };
   response.render('index', templateVars);
 });
+
+/// Temp login/logout routes
+app.get('/login/:id', (request, response) => {
+
+});
+app.get('/logout', (request, response) => {
+
+});
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
