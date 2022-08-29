@@ -78,15 +78,8 @@ class Story {
   // started_at
   // completed_at
 
-  constructor(name, owner_id) {
-    this.name = name;
-    this.owner_id = owner_id;
+  constructor(db_start) {
 
-    const timeStamp = Date.now();
-
-    this.created_at = timeStamp;
-    this.started_at = timeStamp;
-    this.completed_at = timeStamp;
   }
 }
 
