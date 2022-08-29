@@ -30,6 +30,7 @@ $(() => {
 
         user.outputToConsole();
         user.getSingleDetail().appendTo($usersList);
+        user.getHtmlDetails().appendTo($usersList);
       });
   });
 });
