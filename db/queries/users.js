@@ -25,12 +25,19 @@ const getUser = (id) => {
   const vars = [ id ];
   return db.query(query, vars)
     .then(data => {
-      console.log(data.rows);
+      const result = data.rows[0];
+      console.log(result);
+
       return data.rows[0];
     });
 };
-const getUserByRequest = (request) => {
-
+const getUserByRequest = async(request) => {
+  const id = request.session.id;
+  const user = await getUser(id);
+  if (!user) {
+    return null;
+  }
+  return user;
 };
 
 module.exports = {
