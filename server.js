@@ -45,8 +45,11 @@ app.use('/users', usersRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
+  const user = {
+    id: null
+  }
   const templateVars = {
-    user: null
+    user
   };
   res.render('index', templateVars);
 });
