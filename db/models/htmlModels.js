@@ -26,6 +26,16 @@ class User {
 
     return result;
   }
+  getHtmlStories() {
+    return $('<span>Stories Placeholder</span>');
+  }
+  getHtmlContributions() {
+    return $('<span>Contributions Placeholder</span>');
+  }
+
+  /**
+   * Static Methods
+   */
   static getHtmlLogin() {
     const $login = $('<div>');
     const $email = $('<input>')
