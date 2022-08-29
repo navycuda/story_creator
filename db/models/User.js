@@ -13,6 +13,9 @@ class User {
   getSingleDetail() {
     return $(`<li class="user">`).text(this.name);
   }
+  outputToConsole() {
+    console.log(this);
+  }
 }
 
 if (module) {
