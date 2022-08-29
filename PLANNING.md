@@ -45,7 +45,11 @@ The story teller application based losely around D&D campaign creation.
 ## Goals for Monday tailgate
 
 [ ] - come up with a title for the app
-  idea 1 - Storyteller
+  idea 1  - Storyteller
+          - RpgWebWeaver
+          - RpgStoryMaster
+          - StoryMaster
+          - MythMaster (yeah yeah I know a lot of master... but it works, what can I say?)
 [ ] - meetup with a mentor/instructor to get some idea of how realistic our goals are
 [ ] - finalize colour scheme
 [ ] - pick fonts
