@@ -16,6 +16,14 @@ class User {
   outputToConsole() {
     console.log(this);
   }
+  getHtml_UserDetails() {
+    const result = $('<div>');
+    const name = $('<h2>').text(this.name);
+    const email = $('<span>').text(this.email);
+
+
+    return result;
+  }
 }
 
 if (module) {
