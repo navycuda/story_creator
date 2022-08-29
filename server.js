@@ -46,7 +46,7 @@ app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
   const user = {
-    id: null
+    id: 1
   };
   const templateVars = {
     user

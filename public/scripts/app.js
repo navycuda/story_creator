@@ -16,15 +16,14 @@ $(() => {
   let $user;
 
   if($userId) {
-    $('#fetch-user').on('click', () => {
-      $.ajax({
-        method: 'GET',
-        url: `/api/users/${$userId}`
-      })
-        .done((response) => {
-          user = new User(response.user);
-        });
-    });
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${$userId}`
+    })
+      .done((response) => {
+        console.log(response)
+        user = new User(response.user);
+      });
   }
 
   const $contentArea = $('main');
