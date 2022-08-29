@@ -1,0 +1,29 @@
+.main {
+  display:flex;
+  flex-direction: column;
+ }
+
+ .fp_mostpopular {
+  display:flex;
+ }
+
+ .mp_headliner {
+  display:flex;
+ }
+
+ .fp_mostrecent {
+  display:flex;
+ }
+
+ .mr_headliner {
+  display:flex;
+ }
+
+ .fp_yourfavourites {
+  display:flex;
+ }
+
+ .yf_headliner {
+  display:flex;
+ }
+
