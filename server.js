@@ -18,7 +18,8 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieSession({
-
+  name: 'EnigmaSecure',
+  keys: [ 'NIGHTMAREONELMSTREET', 'THESOUNDOFMUSIC' ]
 }));
 app.use(
   '/styles',
@@ -35,6 +36,8 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const userQueries = require('./db/queries/users');
+const db = require('./db/connection');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -48,14 +51,18 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
-  const user = {
-    id: null
-  };
+const getUserFromRequest = (request) => {
+
+
+
+}
+
+app.get('/', (request, response) => {
+  const user = getUserFromRequest(request);
   const templateVars = {
     user
   };
-  res.render('index', templateVars);
+  response.render('index', templateVars);
 });
 
 app.listen(PORT, () => {
