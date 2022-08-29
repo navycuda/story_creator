@@ -51,19 +51,42 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (request, response) => {
+// Some variables... for now...
+const noUser = { user: { id: null } };
+
+const setTemplateVars = async(request, id) => {
   const templateVars = {};
-  const user = userQueries.getUserByRequest(request);
-  templateVars.user = user ? user : { user:{ id:null } };
+  if (!request && !id) {
+    return noUser;
+  }
+  if (!request.session && id) {
+    const user = await userQueries.getUser(id);
+    console.log('user=----', user)
+    if (user) {
+      request.session.id = user.id;
+    }
+    return templateVars.user = user ? user : noUser;
+  }
+  const user = await userQueries.getUserByRequest(request);
+  console.log('user2----', user)
+  console.log(`  setTemplateVars after all ifs :`,user);
+  return templateVars.user = user ? user : noUser;
+};
+
+app.get('/', async(request, response) => {
+  const templateVars = await setTemplateVars(request);
+  console.log('templa', templateVars);
   response.render('index', templateVars);
 });
 
 /// Temp login/logout routes
 app.get('/login/:id', (request, response) => {
-
+  const templateVars = setTemplateVars(request, request.params.id);
+  response.render('index', templateVars);
 });
 app.get('/logout', (request, response) => {
-
+  request.session = null;
+  response.render('index', noUser);
 });
 
 
