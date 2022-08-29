@@ -11,6 +11,9 @@ $(() => {
     alert('login attempt detected.  Nuclear launch initiated.  Unable to cancel.  Good job bro.');
   });
 
+  $userRegistration.on('click', () => {
+    alert('Illegal registration attempt.  Commando unit dispatched');
+  });
 
 
 
