@@ -8,7 +8,10 @@
 const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
-const User = require('../db/models/User');
+const {
+  User,
+  Story
+} = require('../db/models/User');
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
