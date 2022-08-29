@@ -26,6 +26,10 @@ class User {
   }
 }
 
-if (module) {
-  module.exports = User;
+try {
+  if (module) {
+    module.exports = User;
+  }
+} catch (error) {
+  // Do nothing.  Nothing at all.
 }
