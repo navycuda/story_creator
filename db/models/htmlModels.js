@@ -26,6 +26,15 @@ class User {
 
     return result;
   }
+  static getHtmlLogin() {
+    const $login = $('<div>');
+    const $email = $('<input>').attr('type', 'text').val('Email');
+    const $password = $('<input>').attr('type', 'password');
+
+    $login.append($email, $password);
+
+    return $login;
+  }
 }
 
 class Story {
