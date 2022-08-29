@@ -26,7 +26,7 @@ $(() => {
       .done((response) => {
         const $usersList = $('#users');
         const user = response.user;
-        console.log(response);
+        console.log(user.getDetails());
         $usersList.empty();
 
 
