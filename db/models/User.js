@@ -15,4 +15,6 @@ class User {
   }
 }
 
-module.exports = User;
+if (module) {
+  module.exports = User;
+}
