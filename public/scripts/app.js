@@ -15,6 +15,9 @@ $(() => {
     alert('Illegal registration attempt.  Commando unit dispatched');
   });
 
+  $userProfile.on('click', () => {
+    alert('Unauthorized access, formatting primary drive');
+  });
 
 
 
