@@ -6,9 +6,11 @@ $(() => {
   const $userStories = $('#user-stories');
   const $userContributions = $('#user-contributions');
 
+  const $contentArea = $('main');
 
   $userLogin.on('click', () => {
-    alert('login attempt detected.  Nuclear launch initiated.  Unable to cancel.  Good job bro.');
+    $contentArea.empty();
+    User.getHtmlLogin().appendTo($contentArea);
   });
 
   $userRegistration.on('click', () => {
