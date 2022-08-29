@@ -4,9 +4,14 @@
 
 class User {
   // Remember the id, it's issued by the database
-  constructor(name, email, password) {
-    this.name = name;
-    this.email = email;
-    this.password = password;
+  constructor(db_user) {
+    this.name = db_user.name;
+    this.email = db_user.email;
+    this.password = db_user.password;
+  }
+  getDetails() {
+    return 'There be details here';
   }
 }
+
+module.exports = User;
