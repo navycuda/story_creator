@@ -14,7 +14,7 @@ $(() => {
 
   const $contentArea = $('main');
 
-  if (!user) {
+  if (!userId) {
 
     $userLogin.on('click', () => {
       $contentArea.empty();
