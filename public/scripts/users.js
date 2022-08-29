@@ -25,11 +25,9 @@ $(() => {
     })
       .done((response) => {
         const $usersList = $('#users');
-        const user = new User(response.user);
-        console.log(user.getDetails());
+        const user = response.user;
+        console.log(user);
         $usersList.empty();
-
-
         $(`<li class="user">`).text(user.name).appendTo($usersList);
       });
   });
