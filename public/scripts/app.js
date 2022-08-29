@@ -16,25 +16,15 @@ $(() => {
   let $user;
 
   if($userId) {
-    console.log(`userId`, $userId);
-
-
-
     $('#fetch-user').on('click', () => {
-      const id = $('#user-id').val();
-      console.log(id);
       $.ajax({
         method: 'GET',
-        url: `/api/users/${id}`
+        url: `/api/users/${$userId}`
       })
         .done((response) => {
-          const $usersList = $('#users');
           user = new User(response.user);
         });
     });
-
-
-
   }
 
   const $contentArea = $('main');
