@@ -27,31 +27,29 @@ class User {
     return result;
   }
   getHtmlMyStories(callback) {
-    const $myStories = $('<div>');
-    const $title = $('<h2>').text(`The stories of ${this.name}`);
-
-    $myStories.append($title);
-
     $.ajax({
       method: 'GET',
       url: `/api/stories/${this.id}`
     })
       .done((stories) => {
-        console.log(stories);
-
+        const $myStories = $('<div>');
+        const $title = $('<h2>').text(`The stories of ${this.name}`);
+        $myStories.append($title);
+        console.log(`Is there stories?`,stories);
+        console.log('stories.length = ', stories.length);
         if (stories.length === 0) {
           return callback($('<span>What do you mean I have no stories?!</span>'));
         }
 
-        // for (const story of stories) {
+        for (let s = 0; s < stories.length; s++) {
+          console.log('Each individual story\n',stories[s]);
+          const $story = $('<div>');
+          const $storyTitle = $('<h3>').text(stories[s].name);
 
-        //   const $story = $('<div>');
-        //   const $storyTitle = $('<h3>').text(story.name);
+          $story.append($storyTitle);
 
-        //   $story.append($storyTitle);
-
-        //   $myStories.append($story);
-        // }
+          $myStories.append($story);
+        }
         return callback($myStories);
       });
   }
