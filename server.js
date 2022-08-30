@@ -57,12 +57,13 @@ const noUser = { user: { id: null } };
 const setTemplateVars = async(request) => {
   const templateVars = {};
   let user;
-  console.log('setTemplateVars, request.params : ', request.params);
+  // console.log('setTemplateVars, request.params : ', request.params);
   if (!request) {
     console.log('!request');
     return noUser;
   }
   console.log(`!request.session, just before, request.session`, request.session);
+  console.log(`!request.session, just before, request.params`, request.params);
   if (!request.session.id) {
     const id = request.params.id;
     console.log(`!request.session request.params.id`, id);
@@ -70,12 +71,12 @@ const setTemplateVars = async(request) => {
     if (user) {
       request.session.id = id;
     }
-    return templateVars.user = user ? user : noUser;
+    return user ? { user } : noUser;
   }
   console.log('setTemplateVars passed the ifs');
   user = await userQueries.getUserByRequest(request);
   console.log('setTemplateVars after the user instantiationations : ', user);
-  return templateVars.user = user ? user : noUser;
+  return user ? { user } : noUser;
 };
 
 app.get('/', async(request, response) => {
@@ -88,11 +89,11 @@ app.get('/', async(request, response) => {
 app.get('/login/:id', async(request, response) => {
   console.log(`login/:id request.params`, request.params);
   const templateVars = await setTemplateVars(request);
-  response.json('index', templateVars);
+  response.render('index', templateVars);
 });
-app.get('/logout', (request, response) => {
+app.get('/logout', async(request, response) => {
   request.session = null;
-  response.render('index', setTemplateVars());
+  response.render('index', await setTemplateVars(null));
 });
 
 
