@@ -12,6 +12,10 @@ const getStories = (limit = 10) => {
     ;
   `;
   const vars = [ Number(limit) ];
+  return db.query(query, vars)
+    .then((stories) => {
+      return stories.rows;
+    });
 };
 
 const getStoryById = (id) => {
