@@ -79,7 +79,10 @@ class Story {
   // completed_at
 
   constructor(db_start) {
-
+    console.log(`in User constructor :`, db_user);
+    for (const [ key, value ] of Object.entries(db_user)) {
+      this[key] = value;
+    }
   }
 }
 
