@@ -46,7 +46,9 @@ $(() => {
 
   $userStories.on('click', () => {
     $contentArea.empty();
-    user.getHtmlStories().appendTo($contentArea);
+    user.getHtmlStories((stories) => {
+      stories.appendTo($contentArea);
+    });
   });
 
   $userContributions.on('click', () => {
