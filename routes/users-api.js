@@ -24,19 +24,6 @@ router.get('/', (req, res) => {
         .json(errorMsg(error));
     });
 });
-router.get('/stories', (request, response) => {
-  console.log(`router.get('/api/users/stories :)`);
-  userQueries.getUserStories(1)
-    .then((stories) => {
-      console.log(stories);
-      response.json({ stories });
-    })
-    .catch((error) => {
-      response
-        .status(500)
-        .json(errorMsg(error));
-    });
-});
 router.get('/:id', (request, response) => {
   const id = request.params.id;
   console.log(`get api/users/:id`, id);
