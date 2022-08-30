@@ -25,7 +25,7 @@ router.get('/:id', (request, response) => {
   storiesQueries.getStoriesByUserId(request.params.id)
     .then((stories) => {
       console.log(stories);
-      response.json({ stories });
+      response.json(stories);
     })
     .catch((error) => {
       response
