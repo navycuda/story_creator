@@ -107,3 +107,5 @@ database tables have been modeled as objects.  Each object will be responsible f
 
   [ ] - Status update
   [ ] - Start thinking about the possible database queries
+  [ ] - Stories as a list
+  [ ] - Story as an item
