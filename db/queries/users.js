@@ -49,7 +49,7 @@ const getUserStories = (id) => {
     WHERE
       owner_id = $1
     GROUP BY
-      owner_id
+      stories.id
     ;
   `;
   const vars = [ Number(id) ];
