@@ -1,23 +1,28 @@
 // routes/stories-api.js
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/users');
+const storiesQueries = require('../db/queries/stories');
 
-const getStoriesByUserId = (id) => {
-  const query = `
-    SELECT
-      *
-    FROM
-      stories
-    WHERE
-      owner_id = $1
-    GROUP BY
-      stories.id
-    ;
-  `;
-  const vars = [ Number(id) ];
-  return db.query(query, vars)
-    .then(stories => {
-      return stories.rows;
-    });
+const errorMsg = (error) => {
+  return {error: error.message};
 };
+
+router.get('/', (request, response) => {
+
+
+
+});
+
+router.get('/:id', (request, response) => {
+  storiesQueries.getStoriesByUserId(request.params.id)
+    .then((stories) => {
+      console.log(stories);
+      response.json({ stories });
+    })
+    .catch((error) => {
+      response
+        .status(500)
+        .json(errorMsg(error));
+    });
+});
+module.exports = router;
