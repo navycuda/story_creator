@@ -1,5 +1,8 @@
 try {
-  const { User } = require("../../db/models/htmlModels");
+  const {
+    User,
+    Story
+  } = require("../../db/models/htmlModels");
 } catch {
   // do nothing.
 }
@@ -46,7 +49,7 @@ $(() => {
 
   $userStories.on('click', () => {
     $contentArea.empty();
-    user.getHtmlMyStories((stories) => {
+    Story.getStoriesByUserId(user.id, (stories) => {
       stories.appendTo($contentArea);
     });
   });
