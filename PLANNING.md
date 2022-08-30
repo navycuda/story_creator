@@ -99,7 +99,11 @@ database tables have been modeled as objects.  Each object will be responsible f
 
 ### Some other things to think about / TODO
 
-  [ ] - install cookie-sessions for login
+  [X] - install cookie-sessions for login
   [ ] - decide if completing the login/registration page 
         or taking the easy way out
 
+### Tuesday Aug 30, 2022
+
+  [ ] - Status update
+  [ ] - Start thinking about the possible database queries
