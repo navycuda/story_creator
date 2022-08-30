@@ -12,16 +12,34 @@ const {
   User,
   Story
 } = require('../db/models/htmlModels');
+const { response } = require('express');
+
+const errorMsg = (error) => {
+  return {error: error.message};
+};
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
     .then(users => {
       res.json({ users });
     })
-    .catch(err => {
+    .catch(error => {
       res
         .status(500)
-        .json({ error: err.message });
+        .json(errorMsg(error));
+    });
+});
+router.get('/stories', (request, response) => {
+  console.log(`router.get('/api/users/stories :)`);
+  userQueries.getUserStories(1)
+    .then((stories) => {
+      console.log(stories);
+      response.json({ stories });
+    })
+    .catch((error) => {
+      response
+        .status(500)
+        .json(errorMsg(error));
     });
 });
 router.get('/:id', (request, response) => {
@@ -35,8 +53,7 @@ router.get('/:id', (request, response) => {
     . catch((error) => {
       response
         .status(500)
-        .json({ error: error.message });
+        .json(errorMsg(error));
     });
 });
-
 module.exports = router;
