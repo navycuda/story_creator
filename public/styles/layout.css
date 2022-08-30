@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Questrial", sans-serif;
+  min-height: auto;
+  width: stretch;
+  background-image: linear-gradient(#ABA79C, #998d77);
+}

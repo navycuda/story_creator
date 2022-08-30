@@ -22,6 +22,7 @@ const getUser = (id) => {
       users.id = $1
     ;
   `;
+
   const vars = [ Number(id) ];
   return db.query(query, vars)
     .then(data => {

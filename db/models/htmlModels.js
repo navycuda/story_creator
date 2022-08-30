@@ -122,7 +122,6 @@ class Story {
   }
 }
 
-
 // Currently there is some use of these classes server side.
 // This try catch prevents the browswer from throwing a
 // reference error on module
