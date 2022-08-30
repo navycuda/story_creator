@@ -40,6 +40,12 @@ const getUserByRequest = async(request) => {
   }
   return user;
 };
+const getUserStories = (id) => {
+  const query = `
+    SELECT
+  `;
+  const vars = [ Number(id) ];
+};
 
 module.exports = {
   getUsers,
