@@ -26,27 +26,36 @@ class User {
 
     return result;
   }
-  getHtmlStories(callback) {
+  getHtmlMyStories(callback) {
+    const $myStories = $('<div>');
+    const $title = $('<h2>').text(`The stories of ${this.name}`);
+
+    $myStories.append($title);
 
     $.ajax({
       method: 'GET',
       url: `/api/stories/${this.id}`
     })
-      .done((response) => {
-        console.log(response);
+      .done((stories) => {
+        console.log(stories);
 
+        if (stories.length === 0) {
+          return callback($('<span>What do you mean I have no stories?!</span>'));
+        }
 
+        // for (const story of stories) {
 
+        //   const $story = $('<div>');
+        //   const $storyTitle = $('<h3>').text(story.name);
 
+        //   $story.append($storyTitle);
 
-
-
-
-        const $stories = $('div');
-
-        return callback($('<span>Stories Placeholder</span>'));
+        //   $myStories.append($story);
+        // }
+        return callback($myStories);
       });
   }
+
   getHtmlContributions() {
     return $('<span>Contributions Placeholder</span>');
   }
