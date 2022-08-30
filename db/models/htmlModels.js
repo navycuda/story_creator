@@ -26,8 +26,26 @@ class User {
 
     return result;
   }
-  getHtmlStories() {
-    return $('<span>Stories Placeholder</span>');
+  getHtmlStories(callback) {
+
+    $.ajax({
+      method: 'GET',
+      url: `/api/stories/${this.id}`
+    })
+      .done((response) => {
+        console.log(response);
+
+
+
+
+
+
+
+
+        const $stories = $('div');
+
+        return callback($('<span>Stories Placeholder</span>'));
+      });
   }
   getHtmlContributions() {
     return $('<span>Contributions Placeholder</span>');
