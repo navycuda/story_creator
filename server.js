@@ -97,7 +97,7 @@ app.get('/login/:id', async(request, response) => {
 });
 app.get('/logout', async(request, response) => {
   request.session = null;
-  response.render('index', await setTemplateVars(null));
+  response.render('index', noUser);
 });
 
 
