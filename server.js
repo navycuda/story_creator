@@ -36,8 +36,10 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const userQueries = require('./db/queries/users');
 const db = require('./db/connection');
+
+const userQueries = require('./db/queries/users');
+const storyQueries = require('./db/queries/stories');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
