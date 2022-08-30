@@ -86,18 +86,18 @@ const setTemplateVars = async(request) => {
 app.get('/', async(request, response) => {
   console.log('root / request', request.session);
   const templateVars = await setTemplateVars(request);
-  response.render('index', templateVars);
+  response.render('index_old', templateVars);
 });
 
 /// Temp login/logout routes
 app.get('/login/:id', async(request, response) => {
   console.log(`login/:id request.params`, request.params);
   const templateVars = await setTemplateVars(request);
-  response.render('index', templateVars);
+  response.render('index_old', templateVars);
 });
 app.get('/logout', async(request, response) => {
   request.session = null;
-  response.render('index', noUser);
+  response.render('index_old', noUser);
 });
 
 
