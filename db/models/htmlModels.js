@@ -82,9 +82,9 @@ class Story {
     }
   }
 
-  static getStoriesByUserId(user_id, callback) {
+  static async getStoriesByUserId(user_id, callback) {
     const searchUser = {};
-    $.ajax({
+    await $.ajax({
       method: 'GET',
       url: `/api/users/${user_id}`
     })
@@ -93,7 +93,7 @@ class Story {
         searchUser.name = response.user.name;
         console.log(`ajax nested user`, response);
       });
-    $.ajax({
+    await $.ajax({
       method: 'GET',
       url: `/api/stories/${searchUser.id}`
     })
