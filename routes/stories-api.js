@@ -8,7 +8,15 @@ const errorMsg = (error) => {
 };
 
 router.get('/', (request, response) => {
-
+  storiesQueries.getStories()
+    .then((stories) => {
+      response.json({ stories });
+    })
+    .catch((error) => {
+      response
+        .status(500)
+        .json(errorMsg(error));
+    });
 
 
 });
