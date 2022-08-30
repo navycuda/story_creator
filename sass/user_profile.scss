@@ -6,7 +6,7 @@
 .left_column{
   display:flex;
   flex-direction: column;
-  background-color: teal;
+  background-image: linear-gradient(#ABA79C, #998d77);
   min-width: 450px;
   width:30%;
   height: auto;
@@ -28,6 +28,7 @@
 .user_image{
   height:200px;
   width: 200px;
+  margin-top: 10px;
 }
 
 .userandbio{
