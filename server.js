@@ -56,20 +56,21 @@ const noUser = { user: { id: null } };
 
 const setTemplateVars = async(request) => {
   const templateVars = {};
+  const sessionsId = request.session.id;
+  const paramsId = request.params.id;
+
   let user;
   // console.log('setTemplateVars, request.params : ', request.params);
-  if (!request) {
+  if (!sessionsId && !paramsId) {
     console.log('!request');
     return noUser;
   }
   console.log(`!request.session, just before, request.session`, request.session);
   console.log(`!request.session, just before, request.params`, request.params);
-  if (!request.session.id) {
-    const id = request.params.id;
-    console.log(`!request.session request.params.id`, id);
-    user = await userQueries.getUser(id);
+  if (!sessionsId) {
+    user = await userQueries.getUser(paramsId);
     if (user) {
-      request.session.id = id;
+      request.session.id = paramsId;
     }
     return user ? { user } : noUser;
   }
