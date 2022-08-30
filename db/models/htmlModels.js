@@ -26,34 +26,6 @@ class User {
 
     return result;
   }
-  getHtmlMyStories(callback) {
-    $.ajax({
-      method: 'GET',
-      url: `/api/stories/${this.id}`
-    })
-      .done((stories) => {
-        const $myStories = $('<div>');
-        const $title = $('<h2>').text(`The stories of ${this.name}`);
-        $myStories.append($title);
-        console.log(`Is there stories?`,stories);
-        console.log('stories.length = ', stories.length);
-        if (stories.length === 0) {
-          return callback($('<span>What do you mean I have no stories?!</span>'));
-        }
-
-        for (let s = 0; s < stories.length; s++) {
-          console.log('Each individual story\n',stories[s]);
-          const $story = $('<div>');
-          const $storyTitle = $('<h3>').text(stories[s].name);
-
-          $story.append($storyTitle);
-
-          $myStories.append($story);
-        }
-        return callback($myStories);
-      });
-  }
-
   getHtmlContributions() {
     return $('<span>Contributions Placeholder</span>');
   }
@@ -109,7 +81,47 @@ class Story {
       this[key] = value;
     }
   }
+
+  static getStoriesByUserId(user_id, callback) {
+    const searchUser = {};
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${user_id}`
+    })
+      .done((response) => {
+        searchUser.id = response.user.id;
+        searchUser.name = response.user.name;
+        console.log(`ajax nested user`, response);
+      });
+    $.ajax({
+      method: 'GET',
+      url: `/api/stories/${searchUser.id}`
+    })
+      .done((stories) => {
+        const $myStories = $('<div>');
+        const $title = $('<h2>').text(`The stories of ${searchUser.name}`);
+        $myStories.append($title);
+        console.log(`Is there stories?`,stories);
+        console.log('stories.length = ', stories.length);
+        if (stories.length === 0) {
+          return callback($('<span>What do you mean I have no stories?!</span>'));
+        }
+
+        for (let s = 0; s < stories.length; s++) {
+          console.log('Each individual story\n',stories[s]);
+          const $story = $('<div>');
+          const $storyTitle = $('<h3>').text(stories[s].name);
+
+          $story.append($storyTitle);
+
+          $myStories.append($story);
+        }
+        return callback($myStories);
+      });
+
+  }
 }
+
 
 // Currently there is some use of these classes server side.
 // This try catch prevents the browswer from throwing a
