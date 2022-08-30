@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
-
+    <link rel="stylesheet" href="/styles/user_profile.css" />
 
 
     <!-- External JS -->
@@ -43,33 +43,52 @@
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/user_profile.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main_content.css" type="text/css" />
   </head>
-
   <body>
 
   <nav class="navbar">
-    <span id="logo">Storyteller</span>
-    <div>
+   <div class="navbar_left">
+    <p class="logo">Storyteller</p>
+    <div class="menu">
       <% if (!user.id) { %>
       <a href="/">Home</a>
       <a href="/most_recent">New</a>
       <a href="/most_popular">Popular</a>
+      <a href="/register">Register</a>
         <% } else { %>
       <a href="/">Home</a>
       <a href="/most_recent">New</a>
       <a href="/most_popular">Popular</a>
       <a href="/id:/my_stories">My Stories</a>
       <% } %>
+        </div>
     </div>
-    <div>
-        <a href="new_story" title="start a new story"> + </a>
+    <div class="navbar_right">
         <input type="hidden" id="user-id" value="<%= user.id %>" />
         <header>
           <% if (!user.id) { %>
-          <form class="user-login">
-
-          </form>
+            <div class="login-component">
+                <form class="user_login" action="/login" method="POST">
+                  <label for="email">Email address</label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                  />
+                  <label for="password">Password:</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                  />
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
           <% } else { %>
+          <a href="new_story" title="start a new story"> + </a>
           <div><%= user.id %></div>
           <button class="logout" type="submit">logout</button>
           <% } %>
@@ -80,47 +99,99 @@
     <!-- Page-specific (main) content here -->
     <main>
       <!-- This whole section will slide out from the side when user logs in -->
-      <article class="right_column">
-      <section class="user_profile">
+      <section class="left_column">
+      <div class="user_profile">
         <div class="user_info">
-        <img src="" class="user_image">
-        <header>Username:</header>>
-        <header>Bio:</header>>
-        <div class="user_bio"></div>
-        <div class="user_stories"></div>
-      </div>
-      </section>
-      </article>
+        <img src="https://www.fillmurray.com/100/100" class="user_image">
+        <div class="userandbio">
+        <p>Username:</p>
+        <br>
+        <p>Bio:</p>
+        </div>
+        </div>
+        </div>
+        <section class="user_stories">
+    </section>
+  </section>
       <!-- When not logged in only most popular and most recent will show. Clicking on the '+' sign will expand the content downwards to expose a list of 10 options at a time and can we have an arrow that will flip to a new list of options? -->
-    <article class="left_column">
-      <form class="submit"></form>
-      <form class="contribute"></form>
+    <section class="right_column">
+      <!-- <button type="button" class="collapsible">Submit a story</button>
+<div class="content"> -->
+  <form class="submit" action="/id:/submit" method="POST">
+        <div class="dropdown">
+          <button class="dropbtn">Event type:</button>
+          <div class="dropdown-content">
+            <a href="#">Character</a>
+            <a href="#">World-Building</a>
+            <a href="#">Character-building</a>
+          </div>
+      </div>
+        <label for="events">Events</label>
+        <input
+          class="events_input"
+          type="text"
+          name="event"
+        />
+        <label for="story_start">Story:</label>
+        <input
+          class="story_input"
+          type="text"
+          name="story"
+        />
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <!-- </div> -->
+          <!-- <button type="button" class="collapsible">Submit a story</button>
+<div class="content"> -->
+  <form class="contribute" action="/id:/contribute" method="POST">
+    <div class="dropdown">
+      <button class="dropbtn">Event type:</button>
+      <div class="dropdown-content">
+        <a href="#">Character</a>
+        <a href="#">World-Building</a>
+        <a href="#">Character-building</a>
+      </div>
+  </div>
+    <label for="events">Events</label>
+    <input
+      class="events_input"
+      type="text"
+      name="event"
+    />
+    <label for="story_add">Story:</label>
+    <input
+      class="story_input"
+      type="text"
+      name="story"
+    />
+    <button type="submit" class="btn btn-primary">Submit</button></form>
+          <!-- </div> -->
+          <header>
+            Most Popular
+            <a href="/most_popular" title="see more"> + </a>
+          </header>
     <section class= "fp_mostpopular">
-      <header>
-        Most Popular
-        <a href="/most_popular" title="see more"> + </a>
-      </header>
       <article class="mp_headliner">
-        <div><img src=" "></div>
+        <div><img src="https://www.fillmurray.com/100/100"></div>
         <div class="story_blurb"></div>
-        <a href="/story_id">read more</a>
+        <footer><a href="/story_id">+</a></footer>
       </article>
+      </section>
       <section>
         <a href="/story_id"><div class="mp_1"></div></a>
         <a href="/story_id"><div class="mp_2"></div></a>
         <a href="/story_id"><div class="mp_3"></div></a>
         <a href="/story_id"><div class="mp_4"></div></a>
       </section>
-      </section>
-      <section class= "fp_mostrecent">
       <header>
         Most Recent
         <a href="/most_recent" title="see more"> + </a>
       </header>
+      <section class= "fp_mostrecent">
       <article class="mr_headliner">
-        <div><img src=" "></div>
+        <div><img src="https://www.fillmurray.com/100/100"></div>
         <div class="story_blurb"></div>
-        <a href="/story_id">read more</a>
+        <footer><a href="/story_id">+</a></footer>
       </article>
       <section>
         <a href="/story_id"><div class="mr_1"></div></a>
@@ -129,14 +200,14 @@
         <a href="/story_id"><div class="mr_4"></div></a>
       </section>
       </section>
-      <section class= "your_favourites">
       <header> Your Favourites
         <a href="/favourites" title="see more"> + </a>
       </header>
+      <section class= "fp_your_favourites">
       <article class="yf_headliner">
-        <div><img src=" "></div>
+        <div><img src="https://www.fillmurray.com/100/100"></div>
         <div class="story_blurb"></div>
-        <a href="/story_id">read more</a>
+        <footer><a href="/story_id">+</a></footer>
       </article>
       <section>
         <a href="/story_id"><div class="yf_1"></div></a>
@@ -145,7 +216,7 @@
         <a href="/story_id"><div class="yf_4"></div></a>
       </section>
       </section>
-      </article>
+      </section>
   </main>
   </body>
   </html>
