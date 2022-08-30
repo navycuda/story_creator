@@ -40,28 +40,9 @@ const getUserByRequest = async(request) => {
   }
   return user;
 };
-const getUserStories = (id) => {
-  const query = `
-    SELECT
-      *
-    FROM
-      stories
-    WHERE
-      owner_id = $1
-    GROUP BY
-      stories.id
-    ;
-  `;
-  const vars = [ Number(id) ];
-  return db.query(query, vars)
-    .then(stories => {
-      return stories.rows;
-    });
-};
 
 module.exports = {
   getUsers,
   getUser,
-  getUserByRequest,
-  getUserStories
+  getUserByRequest
 };
