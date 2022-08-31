@@ -61,10 +61,18 @@ const setTemplateVars = async(request) => {
   const templateVars = {};
   const sessionsId = request.session.id;
   const paramsId = request.params.id;
+  const email = request.body.email;
 
   let user;
   // console.log('setTemplateVars, request.params : ', request.params);
   if (!sessionsId && !paramsId) {
+    if (email) {
+      user = await userQueries.getUserByEmail(email);
+      if (user) {
+        request.session.id = user.id;
+      }
+      return user ? { user } : noUser;
+    }
     console.log('!request');
     return noUser;
   }
@@ -86,10 +94,14 @@ const setTemplateVars = async(request) => {
 app.get('/', async(request, response) => {
   console.log('root / request', request.session);
   const templateVars = await setTemplateVars(request);
-  response.render('index_old', templateVars);
+  response.render('index', templateVars);
 });
 
 /// Temp login/logout routes
+app.post('/login', (request, response) => {
+  console.log(request.body);
+  response.render('index', noUser);
+});
 app.get('/login/:id', async(request, response) => {
   console.log(`login/:id request.params`, request.params);
   const templateVars = await setTemplateVars(request);
