@@ -98,8 +98,8 @@ app.get('/', async(request, response) => {
 });
 
 /// Temp login/logout routes
-app.post('/login', (request, response) => {
-  console.log(request.body);
+app.post('/login', async(request, response) => {
+  const templateVars = await setTemplateVars(request);
   response.render('index', noUser);
 });
 app.get('/login/:id', async(request, response) => {
