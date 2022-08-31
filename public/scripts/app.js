@@ -3,7 +3,7 @@ try {
     User,
     Story
   } = require("../../db/models/htmlModels");
-} catch {
+} catch (_) {
   // do nothing.
 }
 
