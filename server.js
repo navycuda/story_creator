@@ -5,7 +5,10 @@ require("dotenv").config();
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const morgan = require("morgan");
+<<<<<<< HEAD
 const cookieSession = require("cookie-session");
+=======
+>>>>>>> feature/html
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -16,6 +19,7 @@ app.set("view engine", "ejs");
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
+<<<<<<< HEAD
 app.use(
   cookieSession({
     name: "session",
@@ -24,6 +28,8 @@ app.use(
   })
 );
 
+=======
+>>>>>>> feature/html
 app.use(express.urlencoded({ extended: true }));
 app.use(
   "/styles",
@@ -40,11 +46,14 @@ app.use(express.static("public"));
 const userApiRoutes = require("./routes/users-api");
 const widgetApiRoutes = require("./routes/widgets-api");
 const usersRoutes = require("./routes/users");
+<<<<<<< HEAD
 
 /////
 const login = require("./routes/login");
 const registerRoute = require("./routes/register");
 const popularRoute = require("./routes/popular");
+=======
+>>>>>>> feature/html
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,11 +61,14 @@ const popularRoute = require("./routes/popular");
 app.use("/api/users", userApiRoutes);
 app.use("/api/widgets", widgetApiRoutes);
 app.use("/users", usersRoutes);
+<<<<<<< HEAD
 /////
 app.use("/login", login);
 app.use("/register", registerRoute);
 app.use("/popular", popularRoute);
 
+=======
+>>>>>>> feature/html
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -64,7 +76,17 @@ app.use("/popular", popularRoute);
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
+<<<<<<< HEAD
   res.render("index");
+=======
+  const user = {
+    id: null,
+  };
+  const templateVars = {
+    user,
+  };
+  res.render("stories", templateVars);
+>>>>>>> feature/html
 });
 
 app.listen(PORT, () => {

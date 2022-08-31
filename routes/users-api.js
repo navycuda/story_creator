@@ -8,6 +8,10 @@
 const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
+const {
+  User,
+  Story
+} = require('../db/models/htmlModels');
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
@@ -18,6 +22,20 @@ router.get('/', (req, res) => {
       res
         .status(500)
         .json({ error: err.message });
+    });
+});
+router.get('/:id', (request, response) => {
+  const id = request.params.id;
+  console.log(`get api/users/:id`, id);
+  userQueries.getUser(Number(id))
+    .then((user) => {
+      console.log(`get api/users/:id <user>`, user);
+      response.json({ user });
+    })
+    . catch((error) => {
+      response
+        .status(500)
+        .json({ error: error.message });
     });
 });
 
