@@ -92,9 +92,16 @@
         </footer>
     </nav>
 
-    <!-- Page-specific (main) content here -->
+    <!-- Start of the left column html code -- corresponding css in user_profile.scss
+    + button will take you to the "your stories" page
+    >> button takes you to that story's page
+    description of what the buttons do will come up on hover
+    Headers are text placeholders and I will most likely replace them with an image header.
+    Hearts under story name should indicate how many likes that story has
+    Book indicates how many contributions there are
+    Both tell you what they mean on hover.
+  -->
     <main>
-      <!-- This whole section will slide out from the side when user logs in -->
       <section class="left_column">
       <div class="user_profile">
         <img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="user_image">
@@ -105,14 +112,27 @@
         </div>
         </div>
         <div class="user_bio">
-        <p id="bio">Bio:</p>
-        <p>Sometimes you go through things that seem huge at the time, like a mysterious glowing cloud devouring your entire community. While they're happening, they feel like the only thing that matters and you can hardly imagine that there's a world out there that might have anything else going on. And then the glow cloud moves on. And you move on. And the event is behind you. And you may find, as time passes, that you remember it less and less. Or absolutely not at all, in my case.</p>
+          <header class="bio"><img src="">Bio:</header>
+        <p id="bio_body">Sometimes you go through things that seem huge at the time, like a mysterious glowing cloud devouring your entire community. While they're happening, they feel like the only thing that matters and you can hardly imagine that there's a world out there that might have anything else going on. And then the glow cloud moves on. And you move on. And the event is behind you. And you may find, as time passes, that you remember it less and less. Or absolutely not at all, in my case.</p>
         </div>
         </div>
+        <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
         <section class="user_stories">
+            <div class="story_info"><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image">
+              <div class="user_mostrecent_story">
+                <p id="story_title"><img src="">[insert story title]</p>
+                <p>20 <i class="fa-solid fa-heart" title="likes"></i></p>
+                <p>2 <i class="fa-solid fa-book" title="contributions"></i></p>
+              </div>
+            </div>
+            <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
+            <footer class="feature_story_footer"><a href="/story_id"><i class="fa-solid fa-plus" title="view all of your stories"></i><i class="fa-solid fa-angles-right" title="read the whole story"></i></a></footer>
     </section>
+    <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
   </section>
-      <!-- When not logged in only most popular and most recent will show. Clicking on the '+' sign will expand the content downwards to expose a list of 10 options at a time and can we have an arrow that will flip to a new list of options? -->
+
+  <!-- This is the end of the left column section -->
+
     <section class="right_column">
       <button type="button" class="collapsible">Start your own</button>
       <div class="content">
@@ -148,15 +168,15 @@
       <article class="mp_headliner">
         <div><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image"></div>
         <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
-        <footer><a href="/story_id">+</a></footer>
+        <footer><a href="/story_id"><i class="fa-solid fa-angles-right"></i></a></footer>
       </article>
       <section class="mp_group">
         <div class="mp_1">
           <a href="/story_id">The present tense of regret is indecision.
-          </a></div>
-        <div class="mp_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget.</a></div>
-        <div class="mp_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes.</a></div>
-        <div class="mp_4"><a href="/story_id">There's a lot of downtime during immortality.</a></div>
+            <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mp_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mp_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mp_4"><a href="/story_id">There's a lot of downtime during immortality. <i class="fa-solid fa-angles-right"></i></a></div>
       </section>
       </section>
       <header>
@@ -167,13 +187,13 @@
       <article class="mr_headliner">
         <div><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image"></div>
         <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
-        <footer><a href="/story_id">+</a></footer>
+        <footer><a href="/story_id"><i class="fa-solid fa-angles-right"></i></a></footer>
       </article>
       <section class="mr_group">
-        <div class="mr_1"><a href="/story_id">The present tense of regret is indecision.</a></div>
-        <div class="mr_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget.</a></div>
-        <div class="mr_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes.</a></div>
-        <div class="mr_4"><a href="/story_id">There's a lot of downtime during immortality.</a></div>
+        <div class="mr_1"><a href="/story_id">The present tense of regret is indecision. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mr_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mr_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="mr_4"><a href="/story_id">There's a lot of downtime during immortality. <i class="fa-solid fa-angles-right"></i></a></div>
       </section>
       </section>
       <header> Your Favourites
@@ -183,13 +203,13 @@
       <article class="yf_headliner">
         <div><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image"></div>
         <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
-        <footer><a href="/story_id">+</a></footer>
+        <footer><a href="/story_id"><i class="fa-solid fa-angles-right"></i></a></footer>
       </article>
       <section class="yf_group">
-        <div class="yf_1"><a href="/story_id">The present tense of regret is indecision.</a></div>
-        <div class="yf_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget.</a></div>
-        <div class="yf_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes.</a></div>
-        <div class="yf_4"><a href="/story_id">There's a lot of downtime during immortality.</a></div>
+        <div class="yf_1"><a href="/story_id">The present tense of regret is indecision. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="yf_2"><a href="/story_id">Remember: if you see something, say nothing, and drink to forget. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="yf_3"><a href="/story_id">And now a brief public service announcement. Alligators: can they kill your children? Yes. <i class="fa-solid fa-angles-right"></i></a></div>
+        <div class="yf_4"><a href="/story_id">There's a lot of downtime during immortality. <i class="fa-solid fa-angles-right"></i></a></div>
       </section>
       </section>
       </section>

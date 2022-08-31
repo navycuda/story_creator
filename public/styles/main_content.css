@@ -124,6 +124,8 @@
   min-width: 450px;
   width: 450px;
   padding-right: 30px;
+  background-color: #ABA79C;
+  overflow: hidden;
 }
 
 .mr_headliner {
@@ -133,6 +135,7 @@
   min-width: 450px;
   width: 450px;
   padding-right: 30px;
+  background-color: #ABA79C;
 }
 
 .yf_headliner {
@@ -142,6 +145,7 @@
   min-width: 450px;
   width: 450px;
   padding-right: 30px;
+  background-color: #ABA79C;
 }
 
 .mr_group {
@@ -169,94 +173,106 @@
 }
 
 .mp_1 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mp_2 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mp_3 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mp_4 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mr_1 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mr_2 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mr_3 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .mr_4 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .yf_1 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   margin-bottom: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .yf_2 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .yf_3 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   margin-right: 5px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
 
 .yf_4 {
-  border: 2px solid #190c03;
+  border: 1px solid #190c03;
   padding: 10px;
   height: 49%;
   width: 49%;
+  background-color: #ABA79C;
 }
