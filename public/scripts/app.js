@@ -16,6 +16,8 @@ $(() => {
   const $userContributions = $('#user-contributions');
 
   const $userId = $('#user-id').val();
+  const $userEmail = $('#user-email').val();
+
   let $user;
 
   if($userId) {
@@ -33,8 +35,9 @@ $(() => {
 
 
   $userLogin.on('click', () => {
-    $contentArea.empty();
-    User.getHtmlLogin().appendTo($contentArea);
+    //$contentArea.empty();
+    //User.getHtmlLogin().appendTo($contentArea);
+    alert('login LogOn friend!');
   });
 
   $userRegistration.on('click', () => {
