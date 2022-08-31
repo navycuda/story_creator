@@ -99,8 +99,8 @@ app.get('/', async(request, response) => {
 
 /// Temp login/logout routes
 app.post('/login', async(request, response) => {
-  const templateVars = await setTemplateVars(request);
-  response.render('index', templateVars);
+  await setTemplateVars(request);
+  response.redirect('/');
 });
 app.get('/login/:id', async(request, response) => {
   console.log(`login/:id request.params`, request.params);
@@ -109,7 +109,7 @@ app.get('/login/:id', async(request, response) => {
 });
 app.get('/logout', async(request, response) => {
   request.session = null;
-  response.render('index', noUser);
+  response.redirect('/');
 });
 
 
