@@ -109,7 +109,7 @@ app.get('/login/:id', async(request, response) => {
 });
 app.get('/logout', async(request, response) => {
   request.session = null;
-  response.render('index_old', noUser);
+  response.render('index', noUser);
 });
 
 
