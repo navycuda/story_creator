@@ -44,7 +44,7 @@ $(() => {
   // });
 
   $userLogout.on('click', () => {
-
+    window.location.replace('/logout');
   });
 
   $userRegistration.on('click', () => {
