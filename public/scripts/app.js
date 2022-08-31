@@ -10,6 +10,7 @@ try {
 // Client facing scripts here
 $(() => {
   const $userLogin = $('#user-login');
+  const $userLogout = $('#user-logout');
   const $userRegistration = $('#user-registration');
   const $userProfile = $('#user-profile');
   const $userStories = $('#user-stories');
@@ -33,11 +34,17 @@ $(() => {
 
   const $contentArea = $('main');
 
+  // Using form and a page reload on so this specific
+  // task may no longer have a use.
 
-  $userLogin.on('click', () => {
-    //$contentArea.empty();
-    //User.getHtmlLogin().appendTo($contentArea);
-    alert('login LogOn friend!');
+  // $userLogin.on('click', () => {
+  //   //$contentArea.empty();
+  //   //User.getHtmlLogin().appendTo($contentArea);
+  //   alert('login LogOn friend!');
+  // });
+
+  $userLogout.on('click', () => {
+
   });
 
   $userRegistration.on('click', () => {
