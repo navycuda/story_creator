@@ -64,5 +64,6 @@ const getUserByEmail = (email) => {
 module.exports = {
   getUsers,
   getUser,
-  getUserByRequest
+  getUserByRequest,
+  getUserByEmail
 };
