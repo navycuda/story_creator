@@ -1,5 +1,7 @@
 // db/models/htmlModels.js
 
+const { response } = require("express");
+
 class User {
   // name: VARCHAR(255)
   // email: VARCHAR(255)
@@ -28,6 +30,15 @@ class User {
   }
   getHtmlContributions() {
     return $('<span>Contributions Placeholder</span>');
+  }
+  async logout() {
+    await $.ajax({
+      method: 'DELETE',
+      url: '/api/logout/'
+    })
+      .done((response) => {
+        console.log(response);
+      });
   }
 
   /**
