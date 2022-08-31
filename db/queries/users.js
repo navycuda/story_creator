@@ -34,12 +34,31 @@ const getUser = (id) => {
 };
 const getUserByRequest = async(request) => {
   const id = request.session.id;
-  console.log(`getUserByRequest id : `, id)
+  console.log(`getUserByRequest id : `, id);
   const user = await getUser(id);
   if (!user) {
     return null;
   }
   return user;
+};
+const getUserByEmail = (email) => {
+  const query = `
+    SELECT
+      *
+    FROM
+      users
+    WHERE
+      users.email = $1
+    LIMIT
+      1
+    ;
+  `;
+  const vars = [ email ];
+
+  return db.query(query, vars)
+    .then((user) => {
+      return user.rows[0];
+    });
 };
 
 module.exports = {
