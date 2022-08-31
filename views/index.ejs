@@ -4,15 +4,93 @@
     <!-- Meta Information -->
     <title>Storyteller (working title)</title>
 
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
 
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src="/scripts/users.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  </head>
+
+  <body>
+
+    <!-- Top nav bar (fixed) -->
+    <nav class="navbar">
+      <span id="logo">Storyteller</span>
+      <div>
+        <a href="/">Home</a>
+        <a href="/most_recent">New</a>
+        <a href="/most_popular">Popular</a>
+        <a href="/id:/my_stories">My Stories</a>
+      <div>
+        <div>
+          <a href="new_story" title="start a new story"> + </a>
+          <span class="username"></span>
+          <button class="logout" type="submit">logout</button>
+        </div>
+      </nav>
+
+        <!-- Page-specific (main) content here -->
+        <main>
+        <section class= "fp_mostpopular">
+          <header>
+            Most Popular
+            <a href="/most_popular" title="see more"> + </a>
+          </header>
+          <article class="mp_headliner">
+            <div><img src=" "></div>
+            <div class="story_blurb"></div>
+            <a href="/story_id">read more</a>
+          </article>
+          <section>
+            <a href="/story_id"><div class="mp_1"></div></a>
+            <a href="/story_id"><div class="mp_2"></div></a>
+            <a href="/story_id"><div class="mp_3"></div></a>
+            <a href="/story_id"><div class="mp_4"></div></a>
+          </section>
+          </section>
+          <section class= "fp_mostrecent">
+          <header>
+            Most Recent
+            <a href="/most_recent" title="see more"> + </a>
+          </header>
+          <article class="mr_headliner">
+            <div><img src=" "></div>
+            <div class="story_blurb"></div>
+            <a href="/story_id">read more</a>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- External JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
@@ -24,12 +102,21 @@
     <script defer src="/scripts/models/htmlModels.js"></script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
@@ -83,6 +170,46 @@
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+    <nav class="navbar">
+      <div class="navbar_left">
+        <p class="logo">Storyteller</p>
+        <div class="menu">
+          <% if (!user.id) { %>
+          <a href="/">Home</a>
+          <a href="/most_recent">New</a>
+          <a href="/most_popular">Popular</a>
+          <a href="/register">Register</a>
+          <% } else { %>
+          <a href="/">Home</a>
+          <a href="/most_recent">New</a>
+          <a href="/most_popular">Popular</a>
+          <a href="/id:/my_stories">My Stories</a>
+          <% } %>
+        </div>
+      </div>
+      <div class="navbar_right">
+        <input type="hidden" id="user-id" value="<%= user.id %>" />
+        <header>
+          <% if (!user.id) { %>
+          <div class="login-component">
+            <form class="user_login" action="/login" method="POST">
+              <label for="email">Email address</label>
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="email"
+              />
+              <label for="password">Password:</label>
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
           <% } else { %>
           <a href="new_story" title="start a new story"> + </a>
           <div><%= user.id %></div>
@@ -101,60 +228,35 @@
     Book indicates how many contributions there are
     Both tell you what they mean on hover.
   -->
-<main>
-  <section class="left_column">
-    <article class="welcome">
-     <img src= "https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" alt="" class="welcome_header" >
-     <p class="welcome_header"> WELCOME !!</P>
-   <div class="intro">
-     <p>
-      The moon`s weird though, right? It`s there, and there, and then suddenly it`s not. And it seems to be pretty far up. Is it watching us? If not, what is it watching instead? Is there something more interesting than us? Hey, watch us moon! We may not always be the best show in the universe, but we try.
-     </p>
-   </div>
-   </article>
-   <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
-   <div class="register">
-   <label form="register">Register:</label>
-     <form action="/register" method="POST" id="register">
-       <input type="text" class="email_name" placeholder="name">
-       <br>
-      <p></p>
-       <input type="text" class="email_name" placeholder="email">
-       <br>
-       <button type="submit" class="submit-btn">Submit</button>
-     </form>
-   </div>
-   <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
-   </section>
-
-      <!-- <section class="left_column">
-      <div class="user_profile">
-        <img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="user_image">
-        <div class="user_info">
-        <div class="user_address">
-        <p id="username">Whirrr.CLicK</p>
-        <p id="email">someemail@gmail.com</p>
-        </div>
-        </div>
-        <div class="user_bio">
-          <header class="bio"><img src="">Bio:</header>
-        <p id="bio_body">Sometimes you go through things that seem huge at the time, like a mysterious glowing cloud devouring your entire community. While they're happening, they feel like the only thing that matters and you can hardly imagine that there's a world out there that might have anything else going on. And then the glow cloud moves on. And you move on. And the event is behind you. And you may find, as time passes, that you remember it less and less. Or absolutely not at all, in my case.</p>
-        </div>
-        </div>
-        <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
-        <section class="user_stories">
-            <div class="story_info"><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image">
-              <div class="user_mostrecent_story">
-                <p id="story_title"><img src="">[insert story title]</p>
-                <p>20 <i class="fa-solid fa-heart" title="likes"></i></p>
-                <p>2 <i class="fa-solid fa-book" title="contributions"></i></p>
-              </div>
+  <main>
+    <section class="left_column">
+    <div class="user_profile">
+      <img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="user_image">
+      <div class="user_info">
+      <div class="user_address">
+      <p id="username">Whirrr.CLicK</p>
+      <p id="email">someemail@gmail.com</p>
+      </div>
+      </div>
+      <div class="user_bio">
+        <header class="bio"><img src="">Bio:</header>
+      <p id="bio_body">Sometimes you go through things that seem huge at the time, like a mysterious glowing cloud devouring your entire community. While they're happening, they feel like the only thing that matters and you can hardly imagine that there's a world out there that might have anything else going on. And then the glow cloud moves on. And you move on. And the event is behind you. And you may find, as time passes, that you remember it less and less. Or absolutely not at all, in my case.</p>
+      </div>
+      </div>
+      <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
+      <section class="user_stories">
+          <div class="story_info"><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image">
+            <div class="user_mostrecent_story">
+              <p id="story_title"><img src="">[insert story title]</p>
+              <p>20 <i class="fa-solid fa-heart" title="likes"></i></p>
+              <p>2 <i class="fa-solid fa-book" title="contributions"></i></p>
             </div>
-            <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
-            <footer class="feature_story_footer"><a href="/story_id"><i class="fa-solid fa-plus" title="view all of your stories"></i><i class="fa-solid fa-angles-right" title="read the whole story"></i></a></footer>
-    </section>
-    <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
-  </section> -->
+          </div>
+          <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
+          <footer class="feature_story_footer"><a href="/story_id"><i class="fa-solid fa-plus" title="view all of your stories"></i><i class="fa-solid fa-angles-right" title="read the whole story"></i></a></footer>
+  </section>
+  <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
+  </section>
 
   <!-- This is the end of the left column section -->
 
@@ -240,5 +342,135 @@
       </section>
   </main>
   <%- include('./partials/collapsible') %>
+=======
+    <!-- Page-specific (main) content here -->
+    <main>
+      <!-- This whole section will slide out from the side when user logs in -->
+      <section class="left_column">
+        <div class="user_profile">
+          <div class="user_info">
+            <img src="https://www.fillmurray.com/100/100" class="user_image" />
+            <div class="userandbio">
+              <p>Username:</p>
+              <br />
+              <p>Bio:</p>
+            </div>
+          </div>
+        </div>
+        <section class="user_stories"></section>
+      </section>
+      <!-- When not logged in only most popular and most recent will show. Clicking on the '+' sign will expand the content downwards to expose a list of 10 options at a time and can we have an arrow that will flip to a new list of options? -->
+      <section class="right_column">
+        <button type="button" class="collapsible">Submit a story ++++</button>
+        <div class="content">
+          <form class="submit" action="/id:/submit" method="POST">
+            <div class="dropdown">
+              <button class="dropbtn">Event type:</button>
+              <div class="dropdown-content">
+                <a href="#">Character</a>
+                <a href="#">World-Building</a>
+                <a href="#">Character-building</a>
+              </div>
+            </div>
+            <label for="events">Events</label>
+            <input class="events_input" type="text" name="event" />
+            <label for="story_start">Story:</label>
+            <input class="story_input" type="text" name="story" />
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <button type="button" class="collapsible">Submit a story</button>
+<div class="content">
+        <form class="contribute" action="/id:/contribute" method="POST">
+          <div class="dropdown">
+            <button class="dropbtn">Event type:</button>
+            <div class="dropdown-content">
+              <a href="#">Character</a>
+              <a href="#">World-Building</a>
+              <a href="#">Character-building</a>
+            </div>
+          </div>
+          <label for="events">Events</label>
+          <input class="events_input" type="text" name="event" />
+          <label for="story_add">Story:</label>
+          <input class="story_input" type="text" name="story" />
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- </div> -->
+        <header>
+          Most Popular
+          <a href="/most_popular" title="see more"> + </a>
+        </header>
+        <section class="fp_mostpopular">
+          <article class="mp_headliner">
+            <div><img src="https://www.fillmurray.com/100/100" /></div>
+            <div class="story_blurb"></div>
+            <footer><a href="/story_id">+</a></footer>
+          </article>
+        </section>
+        <section>
+          <a href="/story_id"><div class="mp_1"></div></a>
+          <a href="/story_id"><div class="mp_2"></div></a>
+          <a href="/story_id"><div class="mp_3"></div></a>
+          <a href="/story_id"><div class="mp_4"></div></a>
+        </section>
+        <header>
+          Most Recent
+          <a href="/most_recent" title="see more"> + </a>
+        </header>
+        <section class="fp_mostrecent">
+          <article class="mr_headliner">
+            <div><img src="https://www.fillmurray.com/100/100" /></div>
+            <div class="story_blurb"></div>
+            <footer><a href="/story_id">+</a></footer>
+
+          </article>
+          <section>
+            <a href="/story_id"><div class="mr_1"></div></a>
+            <a href="/story_id"><div class="mr_2"></div></a>
+            <a href="/story_id"><div class="mr_3"></div></a>
+            <a href="/story_id"><div class="mr_4"></div></a>
+          </section>
+
+          </section>
+          <section class= "fp_yourfavourites">
+          <header> Your Favourites
+            <a href="/favourites" title="see more"> + </a>
+          </header>
+          <article class="yf_headliner">
+            <div><img src=" "></div>
+            <div class="story_blurb"></div>
+            <a href="/story_id">read more</a>
+
+        </section>
+        <header>
+          Your Favourites
+          <a href="/favourites" title="see more"> + </a>
+        </header>
+        <section class="fp_your_favourites">
+          <article class="yf_headliner">
+            <div><img src="https://www.fillmurray.com/100/100" /></div>
+            <div class="story_blurb"></div>
+            <footer><a href="/story_id">+</a></footer>
+
+          </article>
+          <section>
+            <a href="/story_id"><div class="yf_1"></div></a>
+            <a href="/story_id"><div class="yf_2"></div></a>
+            <a href="/story_id"><div class="yf_3"></div></a>
+            <a href="/story_id"><div class="yf_4"></div></a>
+          </section>
+
+          </section>
+      </main>
+      </body>
+      </html>
+
+        </section>
+      </section>
+    </main>
+    <%- include('./partials/collapsible') %>
+>>>>>>> mustafa
   </body>
-  </html>
+</html>
+

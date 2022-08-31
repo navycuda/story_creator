@@ -1,0 +1,70 @@
+.storie_container {
+  border: 2px solid rgb(188, 191, 110);
+  background-color: #ffff;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 90%;
+  box-shadow: 4px 8px 10px 3px rgba(0, 0, 0, 0.71);
+}
+
+.title-section {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.mrg-left {
+  margin-left: 1rem;
+}
+.story_title {
+  flex-grow: 2;
+}
+.rs_title {
+  flex-grow: 2;
+}
+.para {
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: rgb(246, 237, 222);
+}
+.title_author {
+  display: flex;
+  justify-content: space-between;
+}
+.rs_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.story_section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.contribution-section {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.bold {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+/*  Story section  */
+
+.float-r {
+  display: flex;
+  justify-content: flex-end;
+}
+.no-bg {
+  background-color: transparent;
+}
+img {
+  width: 200px;
+  height: auto;
+}
