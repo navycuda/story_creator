@@ -100,7 +100,7 @@ app.get('/', async(request, response) => {
 /// Temp login/logout routes
 app.post('/login', async(request, response) => {
   const templateVars = await setTemplateVars(request);
-  response.render('index', noUser);
+  response.render('index', templateVars);
 });
 app.get('/login/:id', async(request, response) => {
   console.log(`login/:id request.params`, request.params);
