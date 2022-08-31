@@ -19,7 +19,7 @@ $(() => {
   const $userId = $('#user-id').val();
   const $userEmail = $('#user-email').val();
 
-  let $user;
+  let user;
 
   if($userId) {
     $.ajax({
@@ -27,7 +27,7 @@ $(() => {
       url: `/api/users/${$userId}`
     })
       .done((response) => {
-        console.log(response)
+        console.log(response);
         user = new User(response.user);
       });
   }
