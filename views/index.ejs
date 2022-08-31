@@ -41,55 +41,53 @@
     <link rel="stylesheet" href="/styles/main_content.css" type="text/css" />
   </head>
   <body>
-
     <nav class="navbar">
       <div class="navbar_left">
         <p class="logo">Storyteller</p>
         <footer class="menu_bar_left">
-    <div class="menu">
-      <% if (!user.id) { %>
-      <a href="/">Home</a>
-      <a href="/most_recent">New</a>
-      <a href="/most_popular">Popular</a>
-      <a href="/register">Register</a>
-        <% } else { %>
-      <a href="/">Home</a>
-      <a href="/most_recent">New</a>
-      <a href="/most_popular">Popular</a>
-      <a href="/id:/my_stories">My Stories</a>
-      <% } %>
+          <div class="menu">
+            <% if (!user.id) { %>
+            <a href="/">Home</a>
+            <a href="/most_recent">New</a>
+            <a href="/most_popular">Popular</a>
+            <a href="/register">Register</a>
+              <% } else { %>
+            <a href="/">Home</a>
+            <a href="/most_recent">New</a>
+            <a href="/most_popular">Popular</a>
+            <a href="/id:/my_stories">My Stories</a>
+            <% } %>
+          </div>
+        </footer>
+      </div>
+      <footer class="menu_bar_right">
+        <div class="navbar_right">
+          <input type="hidden" id="user-id" value="<%= user.id %>" />
+            <% if (!user.id) { %>
+              <div class="login-component">
+                  <form class="user_login" action="/login/" method="POST">
+                    <input
+                      class="form-control"
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                    />
+                    <input
+                      class="form-control"
+                      type="password"
+                      name="password"
+                      placeholder="password"
+                    />
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+              </div>
+            <% } else { %>
+            <a href="new_story" title="start a new story"> + </a>
+            <div><%= user.id %></div>
+            <button class="logout" type="submit">logout</button>
+            <% } %>
         </div>
       </footer>
-    </div>
-  <footer class="menu_bar_right">
-    <div class="navbar_right">
-        <input type="hidden" id="user-id" value="<%= user.id %>" />
-        <header>
-          <% if (!user.id) { %>
-            <div class="login-component">
-                <form class="user_login" action="/login" method="POST">
-                  <input
-                    class="form-control"
-                    type="email"
-                    name="email"
-                    placeholder="email"
-                  />
-                  <input
-                    class="form-control"
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                  />
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-          <% } else { %>
-          <a href="new_story" title="start a new story"> + </a>
-          <div><%= user.id %></div>
-          <button class="logout" type="submit">logout</button>
-          <% } %>
-        </div>
-        </footer>
     </nav>
 
     <!-- Page-specific (main) content here -->
