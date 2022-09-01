@@ -36,6 +36,10 @@ app.use(express.static("public"));
 const userApiRoutes = require('./routes/users-api');
 const storiesApiRoutes = require('./routes/stories-api');
 const widgetApiRoutes = require('./routes/widgets-api');
+
+
+const apiRoutes = require('./routes/api/apiRouter');
+
 const usersRoutes = require('./routes/users');
 const db = require('./db/connection');
 
@@ -53,7 +57,11 @@ const userQueries = require('./db/queries/users');
 app.use('/api/users', userApiRoutes);
 app.use('/api/stories', storiesApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
+app.use('/api', apiRoutes);
 app.use('/users', usersRoutes);
+
+
+
 
 /////
 // app.use("/login", login);

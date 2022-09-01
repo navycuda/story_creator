@@ -7,11 +7,11 @@
 
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/users');
+const userQueries = require('../../../db/queries/users');
 const {
   User,
   Story
-} = require('../db/models/htmlModels');
+} = require('../../../db/models/htmlModels');
 
 const errorMsg = (error) => {
   return {error: error.message};
