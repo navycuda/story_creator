@@ -5,6 +5,7 @@
 .left_column {
   display: flex;
   flex-direction: column;
+  position: static;
   background-image: linear-gradient(#ABA79C, #998d77);
   min-width: 380px;
   max-width: 380px;
