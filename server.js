@@ -33,9 +33,9 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const storiesApiRoutes = require('./routes/stories-api');
-const widgetApiRoutes = require('./routes/widgets-api');
+// const userApiRoutes = require('./routes/api/users/usersRouter');
+// const storiesApiRoutes = require('./routes/stories-api');
+// const widgetApiRoutes = require('./routes/widgets-api');
 
 
 const apiRoutes = require('./routes/api/apiRouter');
@@ -54,10 +54,10 @@ const userQueries = require('./db/queries/users');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 
-app.use('/api/users', userApiRoutes);
-app.use('/api/stories', storiesApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
 app.use('/api', apiRoutes);
+// app.use('/api/users', userApiRoutes);
+// app.use('/api/stories', storiesApiRoutes);
+// app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 
 
@@ -116,29 +116,29 @@ app.get('/', async(request, response) => {
 
 /// Temp login/logout routes
 
-app.get('/html', (request, response) => {
-  const html = `
-    <p>
-      IMPORTED HTML FROM API
-    </p>
-  `;
-  response.render('partials/_footer');
-});
+// app.get('/html', (request, response) => {
+//   const html = `
+//     <p>
+//       IMPORTED HTML FROM API
+//     </p>
+//   `;
+//   response.render('partials/_footer');
+// });
 
 
-app.post('/login', async(request, response) => {
-  await setTemplateVars(request);
-  response.redirect('/');
-});
-app.get('/login/:id', async(request, response) => {
-  console.log(`login/:id request.params`, request.params);
-  const templateVars = await setTemplateVars(request);
-  response.render('index_old', templateVars);
-});
-app.get('/logout', async(request, response) => {
-  request.session = null;
-  response.redirect('/');
-});
+// app.post('/login', async(request, response) => {
+//   await setTemplateVars(request);
+//   response.redirect('/');
+// });
+// app.get('/login/:id', async(request, response) => {
+//   console.log(`login/:id request.params`, request.params);
+//   const templateVars = await setTemplateVars(request);
+//   response.render('index_old', templateVars);
+// });
+// app.get('/logout', async(request, response) => {
+//   request.session = null;
+//   response.redirect('/');
+// });
 
 
 app.listen(PORT, () => {
