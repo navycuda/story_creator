@@ -19,20 +19,24 @@ $(() => {
   const $userId = $('#user-id').val();
   const $userEmail = $('#user-email').val();
 
+  const $contentArea = $('main');
+  const $leftColumn = $('#left-column');
+  const $rightColumn = $('#right-column');
+
   let user;
 
-  if($userId) {
+  if ($userId) {
     $.ajax({
       method: 'GET',
       url: `/api/users/${$userId}`
     })
       .done((response) => {
-        console.log(response);
+        console.log('if($userId)',response);
         user = new User(response.user);
+        user.getHtmlDetails().appendTo($leftColumn);
       });
   }
 
-  const $contentArea = $('main');
 
   // Using form and a page reload on so this specific
   // task may no longer have a use.
