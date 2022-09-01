@@ -144,3 +144,7 @@ app.get('/', async(request, response) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+module.exports = {
+  setTemplateVars
+};
