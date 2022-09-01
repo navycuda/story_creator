@@ -113,7 +113,6 @@ app.get('/logout', async(request, response) => {
   response.redirect('/');
 });
 
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

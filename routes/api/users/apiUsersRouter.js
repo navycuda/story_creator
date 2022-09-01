@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const userQueries = require('../../../db/queries/userQueries');
-const { setTemplateVars }  = require('../../../server');
+const { setTemplateVars }  = require('../../../tools');
 
 const errorMsg = (error) => {
   return {error: error.message};
@@ -22,6 +22,40 @@ router.route('/')
       });
   });
 
+
+router.route('/bio')
+  .get((request, response) => {
+    const templateVars = setTemplateVars(request);
+
+    console.log("Uhhh?");
+
+
+    response.render('./partials/users/_userBio', templateVars);
+
+  });
+
+router.route('/bio/:id')
+  .get((request, response) => {
+    const templateVars = setTemplateVars(request);
+
+    const id = request.params.id;
+    userQueries.getUser(Number(id))
+      .then((user) => {
+        response.render('./partials/users/_userBio', { user });
+      })
+      .catch((error) => {
+        response
+          .status(500)
+          .status(errorMsg(error));
+      });
+
+
+    response.render('./partials/users/_userBio', templateVars);
+
+  });
+
+
+
 router.route('/:id')
   .get((request, response) => {
     const id = request.params.id;
@@ -35,19 +69,6 @@ router.route('/:id')
           .status(errorMsg(error));
       });
   });
-
-router.route('/myBio')
-  .get((request, response) => {
-    console.log(`myBio`);
-    //const templateVars = setTemplateVars(request);
-
-    console.log(request);
-
-
-    response.render('/partials/users/_userBio');
-
-  });
-
 
 
 
