@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const storyQueries = require('../../../db/queries/storyQueries');
 
 const errorMsg = (error) => {
   return {error: error.message};
@@ -8,6 +9,12 @@ const errorMsg = (error) => {
 
 router.route('/')
   .get((request, response) => {
-    response.send('Stuff happened here.  I wish I knew what.');
+    storyQueries.getStories()
+      .then((stories) => {
+        response.json(stories);
+      })
+      .catch((error) => {
+        response.json(error: error.message);
+      });
   });
 module.exports = router;
