@@ -1,4 +1,4 @@
-.storie_container {
+/* .storie_container {
   border: 2px solid rgb(188, 191, 110);
   background-color: #ffff;
   font-size: 1rem;
@@ -57,7 +57,7 @@
 }
 /*  Story section  */
 
-.float-r {
+/* .float-r {
   display: flex;
   justify-content: flex-end;
 }
@@ -67,4 +67,4 @@
 img {
   width: 200px;
   height: auto;
-}
+} */
