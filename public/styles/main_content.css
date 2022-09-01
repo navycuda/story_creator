@@ -123,6 +123,11 @@
   font-size: 16px;
 }
 
+.rc_header {
+  display: flex;
+  flex-direction: row;
+}
+
 .mp_header {
   display: flex;
   flex-direction: row;
@@ -132,6 +137,7 @@
   height: 30px;
   width: 450px;
   padding: 5px;
+  margin-bottom: 5px;
   background-color: #35352d;
   color: #c77100;
 }
@@ -165,37 +171,69 @@
 .mp_headliner {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  justify-content: space-between;
   height: 100%;
   min-width: 450px;
   width: 450px;
   margin-right: 10px;
   background-color: #ABA79C;
   overflow: hidden;
+}
+
+.mp_headliner_header {
+  display: flex;
+  flex-direction: row;
+  background-color: #35352d;
+  width: 100%;
+  color: #c77100;
+  height: 100px;
+  margin-left: 5px;
 }
 
 .mr_headliner {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  justify-content: space-between;
   height: 100%;
-  min-width: 450px;
   width: 450px;
+  min-width: 450px;
   margin-right: 10px;
+  padding-top: 5px;
   background-color: #ABA79C;
   overflow: hidden;
+}
+
+.mr_headliner_header {
+  display: flex;
+  flex-direction: row;
+  background-color: #35352d;
+  width: 100%;
+  color: #c77100;
+  height: 100px;
+  margin-left: 5px;
 }
 
 .yf_headliner {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  justify-content: space-between;
   height: 100%;
   min-width: 450px;
   width: 450px;
   margin-right: 10px;
+  padding-top: 5px;
   background-color: #ABA79C;
   overflow: hidden;
+}
+
+.yf_headliner_header {
+  display: flex;
+  flex-direction: row;
+  background-color: #35352d;
+  width: 100%;
+  color: #c77100;
+  height: 100px;
+  margin-left: 5px;
 }
 
 .mp_group {
@@ -254,6 +292,16 @@
   color: #c77100;
   height: 40px;
   margin-left: 2px;
+}
+
+.headliner_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  background-color: #35352d;
+  height: 19px;
+  padding-right: 5px;
+  padding-top: 2px;
 }
 
 .mp_story {
@@ -341,7 +389,7 @@
   flex-direction: column;
   align-items: stretch;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -351,7 +399,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -361,7 +409,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -371,7 +419,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -382,7 +430,7 @@
   flex-direction: column;
   align-items: stretch;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -392,7 +440,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -402,7 +450,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -412,7 +460,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -423,7 +471,7 @@
   flex-direction: column;
   align-items: stretch;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -433,7 +481,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -443,7 +491,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
@@ -453,14 +501,20 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #998d77;
-  height: 49%;
+  height: 50%;
   width: 49%;
   background-color: #ABA79C;
   font-size: 12px;
 }
 
+.story_title_icons {
+  display: flex;
+  flex-direction: column;
+}
+
 .fa-heart {
   color: #c77100;
+  font-size: 12px;
 }
 
 .fa-heart:hover {
@@ -470,4 +524,5 @@
 .fa-book {
   color: #c77100;
   margin-top: 1px;
+  font-size: 12px;
 }
