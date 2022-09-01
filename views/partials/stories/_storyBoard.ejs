@@ -4,20 +4,15 @@
 </header>
 
 <section class="fp_mostpopular">
-  <article class="mp_headliner">
-    <div><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="rc_story_image"></div>
-    <div class="rc_story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
-    <footer><a href="/story_id"><i class="fa-solid fa-angles-right" id="rc_angles" title="read more"></i></a></footer>
-  </article>
+  <%- include('_storyHero') %>
   <section class="mp_group">
     <!-- Card One -->
-    <%- include('storyCard', { card: { title: 'Bowsers Castle', likes:7, contributions:17, description:'See no evil, hear no evil' } }) %>
+    <%- include('_storyCard', { card: { title: 'Bowsers Castle', likes:7, contributions:17, description:'See no evil, hear no evil' } }) %>
     <!-- Card Two -->
-    <%- include('storyCard', { card: { title: 'Smashing Blackrock', likes:8, contributions:18, description:'See no evil, hear no evil' } }) %>
+    <%- include('_storyCard', { card: { title: 'Smashing Blackrock', likes:8, contributions:18, description:'See no evil, hear no evil' } }) %>
     <!-- Card Three -->
-    <%- include('storyCard', { card: { title: 'Curse of Citadel', likes:9, contributions:19, description:'See no evil, hear no evil' } }) %>
+    <%- include('_storyCard', { card: { title: 'Curse of Citadel', likes:9, contributions:19, description:'See no evil, hear no evil' } }) %>
     <!-- Card Four -->
-    <%- include('storyCard', { card: { title: 'Ape's Revenge', likes:10, contributions:20, description:'See no evil, hear no evil' } }) %>
-
+    <%- include('_storyCard', { card: { title: "Ape's Revenge", likes:10, contributions:20, description:'See no evil, hear no evil' } }) %>
   </section>
 </section>
