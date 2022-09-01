@@ -1,5 +1,5 @@
 // load .env data into process.env
-require('dotenv').config();
+require("dotenv").config();
 
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
@@ -10,7 +10,7 @@ const cookieSession = require('cookie-session');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -22,14 +22,14 @@ app.use(cookieSession({
   keys: [ 'NIGHTMAREONELMSTREET', 'THESOUNDOFMUSIC' ]
 }));
 app.use(
-  '/styles',
+  "/styles",
   sassMiddleware({
-    source: __dirname + '/sass',
-    destination: __dirname + '/public/styles',
+    source: __dirname + "/sass",
+    destination: __dirname + "/public/styles",
     isSass: false, // false => scss, true => sass
   })
 );
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -41,13 +41,25 @@ const db = require('./db/connection');
 
 const userQueries = require('./db/queries/users');
 
+/////
+// const login = require("./routes/login");
+// const registerRoute = require("./routes/register");
+// const popularRoute = require("./routes/popular");
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
+
 app.use('/api/users', userApiRoutes);
 app.use('/api/stories', storiesApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+
+/////
+// app.use("/login", login);
+// app.use("/register", registerRoute);
+// app.use("/popular", popularRoute);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -73,11 +85,8 @@ const setTemplateVars = async(request) => {
       }
       return user ? { user } : noUser;
     }
-    console.log('!request');
     return noUser;
   }
-  console.log(`!request.session, just before, request.session`, request.session);
-  console.log(`!request.session, just before, request.params`, request.params);
   if (!sessionsId) {
     user = await userQueries.getUser(paramsId);
     if (user) {
@@ -85,14 +94,11 @@ const setTemplateVars = async(request) => {
     }
     return user ? { user } : noUser;
   }
-  console.log('setTemplateVars passed the ifs');
   user = await userQueries.getUserByRequest(request);
-  console.log('setTemplateVars after the user instantiationations : ', user);
   return user ? { user } : noUser;
 };
 
 app.get('/', async(request, response) => {
-  console.log('root / request', request.session);
   const templateVars = await setTemplateVars(request);
   response.render('index', templateVars);
 });
