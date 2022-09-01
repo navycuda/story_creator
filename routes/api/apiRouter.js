@@ -11,9 +11,11 @@ router.use('/stories', apiStoriesRoutes);
 
 console.log("something happened??");
 
-router.route('/')
+router.route('*')
   .get((request, response) => {
-    response.render('./partials/_footer');
+    response
+      .status(404)
+      .send('bad path');
   });
 
 
