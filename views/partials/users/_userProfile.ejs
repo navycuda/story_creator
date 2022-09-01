@@ -1,6 +1,26 @@
-<p>
-  User Bio should be here... or so they say
-
-  <%= user.id %>
-  <%= user.name %>
-</p>
+  <div class="user_profile">
+    <img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="user_image">
+    <div class="user_info">
+    <div class="user_address">
+    <p id="username"><%= user.name %></p>
+    <p id="email"><%= user.email %></p>
+    </div>
+    </div>
+    <div class="user_bio">
+      <header class="bio"><img src="">Bio:</header>
+    <p id="bio_body">Sometimes you go through things that seem huge at the time, like a mysterious glowing cloud devouring your entire community. While they're happening, they feel like the only thing that matters and you can hardly imagine that there's a world out there that might have anything else going on. And then the glow cloud moves on. And you move on. And the event is behind you. And you may find, as time passes, that you remember it less and less. Or absolutely not at all, in my case.</p>
+    </div>
+    </div>
+    <img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
+    <section class="user_stories">
+        <div class="story_info"><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="story_image">
+          <div class="user_mostrecent_story">
+            <p id="story_title"><img src="">[insert story title]</p>
+            <p>20 <i class="fa-solid fa-heart" title="likes"></i></p>
+            <p>2 <i class="fa-solid fa-book" title="contributions"></i></p>
+          </div>
+        </div>
+        <div class="story_blurb">We have nothing to speak about. There never was. Words are an unnecessary trouble. Expression is time wasting away. Any communication is just a yelp in the darkness. I am speaking now but I am saying nothing. I am just making noises, and, as it happens, they are organized in words and you should not draw meaning from this.</div>
+        <footer class="feature_story_footer"><a href="/story_id"><i class="fa-solid fa-plus" title="view all of your stories"></i><i class="fa-solid fa-angles-right" title="read the whole story"></i></a></footer>
+</section>
+<img src="https://static.thenounproject.com/png/1206847-200.png" class="divider">
