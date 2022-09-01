@@ -19,9 +19,9 @@ router.route('/')
   });
 
 
-router.route('/:num')
+router.route('/limit=:limit')
   .get((request, response) => {
-    storyQueries.getStoriesWithLimit(Number(request.params.num))
+    storyQueries.getStoriesWithLimit(Number(request.params.limit))
       .then((stories) => {
         response.json(stories);
       })
@@ -29,6 +29,8 @@ router.route('/:num')
         response.json(errorMsg(error));
       });
   });
+
+
 
 
 
