@@ -19,4 +19,17 @@ router.route('/')
   });
 
 
+router.route('/:num')
+  .get((request, response) => {
+    storyQueries.getStoriesWithLimit(Number(request.params.num))
+      .then((stories) => {
+        response.json(stories);
+      })
+      .catch((error) => {
+        response.json(errorMsg(error));
+      });
+  });
+
+
+
 module.exports = router;
