@@ -1,7 +1,5 @@
 // db/models/htmlModels.js
 
-const { response } = require("express");
-
 class User {
   // name: VARCHAR(255)
   // email: VARCHAR(255)
