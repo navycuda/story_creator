@@ -40,6 +40,7 @@ const usersRoutes = require('./routes/users');
 const db = require('./db/connection');
 
 const userQueries = require('./db/queries/users');
+const { request } = require("express");
 
 /////
 // const login = require("./routes/login");
@@ -103,7 +104,21 @@ app.get('/', async(request, response) => {
   response.render('index', templateVars);
 });
 
+
+
+
 /// Temp login/logout routes
+
+app.get('/html', (request, response) => {
+  const html = `
+    <p>
+      IMPORTED HTML FROM API
+    </p>
+  `;
+  response.send(html);
+});
+
+
 app.post('/login', async(request, response) => {
   await setTemplateVars(request);
   response.redirect('/');
