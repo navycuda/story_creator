@@ -2,26 +2,36 @@
 <section class="right_column" id="right-column">
   <button type="button" class="collapsible">Start your own</button>
   <div class="content">
-<form class="submit" action="/id:/submit" method="POST">
-    <div class="dropdown">
-      <button class="dropbtn">Event type:</button>
-      <div class="dropdown-content">
-        <a href="#">Character</a>
-        <a href="#">World-Building</a>
-        <a href="#">Character-building</a>
+    <form class="submit" action="/id:/submit" method="POST">
+      <div class="dropdown">
+        <button class="dropbtn">Event type:</button>
+        <div class="dropdown-content">
+          <a href="#">Character</a>
+          <a href="#">World-Building</a>
+          <a href="#">Character-building</a>
+        </div>
       </div>
+      <label for="events">Events</label>
+      <input class="events_input" type="text" name="event">
+      <label for="story_start">Story:</label>
+      <input class="story_input" type="text" name="story">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-    <label for="events">Events</label>
-    <input class="events_input" type="text" name="event">
-    <label for="story_start">Story:</label>
-    <input class="story_input" type="text" name="story">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-      <header class="mp_header">
-        Most Popular
-        <a href="/most_popular" title="see more"><i class="fa-solid fa-plus" id="rc_fa_plus" title="see more"></i></a>
-      </header>
+  <header class="mp_header">
+    Most Popular
+    <a href="/most_popular" title="see more"><i class="fa-solid fa-plus" id="rc_fa_plus" title="see more"></i></a>
+  </header>
+
+  <!-- Most Popular -->
+  <%- include('stories/_storyBoard') %>
+  <!-- Most Recent -->
+  <%- include('stories/_storyBoard') %>
+  <!-- My Favourites -->
+  <%- include('stories/_storyBoard') %>
+
+
+</section>
 <!-- <section class="fp_mostpopular">
   <article class="mp_headliner">
     <div><img src="https://w0.peakpx.com/wallpaper/335/727/HD-wallpaper-fantasy-forest-forest-tree-fantasy-green-lush-beautiful-landscape.jpg" class="rc_story_image"></div>
