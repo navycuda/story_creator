@@ -6,6 +6,10 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
+const {
+  setTemplateVars,
+  noUser
+} = require('./tools');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -75,42 +79,11 @@ app.use('/api', apiRoutes);
 // Separate them into separate routes files (see above).
 
 // Some variables... for now...
-const noUser = { user: { id: null } };
-
-const setTemplateVars = async(request) => {
-  const templateVars = {};
-  const sessionsId = request.session.id;
-  const paramsId = request.params.id;
-  const email = request.body.email;
-
-  let user;
-  // console.log('setTemplateVars, request.params : ', request.params);
-  if (!sessionsId && !paramsId) {
-    if (email) {
-      user = await userQueries.getUserByEmail(email);
-      if (user) {
-        request.session.id = user.id;
-      }
-      return user ? { user } : noUser;
-    }
-    return noUser;
-  }
-  if (!sessionsId) {
-    user = await userQueries.getUser(paramsId);
-    if (user) {
-      request.session.id = paramsId;
-    }
-    return user ? { user } : noUser;
-  }
-  user = await userQueries.getUserByRequest(request);
-  return user ? { user } : noUser;
-};
 
 app.get('/', async(request, response) => {
   const templateVars = await setTemplateVars(request);
   response.render('index', templateVars);
 });
-
 
 
 
@@ -126,19 +99,19 @@ app.get('/', async(request, response) => {
 // });
 
 
-// app.post('/login', async(request, response) => {
-//   await setTemplateVars(request);
-//   response.redirect('/');
-// });
-// app.get('/login/:id', async(request, response) => {
-//   console.log(`login/:id request.params`, request.params);
-//   const templateVars = await setTemplateVars(request);
-//   response.render('index_old', templateVars);
-// });
-// app.get('/logout', async(request, response) => {
-//   request.session = null;
-//   response.redirect('/');
-// });
+app.post('/login', async(request, response) => {
+  await setTemplateVars(request);
+  response.redirect('/');
+});
+app.get('/login/:id', async(request, response) => {
+  console.log(`login/:id request.params`, request.params);
+  const templateVars = await setTemplateVars(request);
+  response.render('index_old', templateVars);
+});
+app.get('/logout', async(request, response) => {
+  request.session = null;
+  response.redirect('/');
+});
 
 
 app.listen(PORT, () => {
