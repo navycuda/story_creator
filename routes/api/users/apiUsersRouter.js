@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const userQueries = require('../../../db/queries/userQueries');
+const { setTemplateVars }  = require('../../../server');
 
 const errorMsg = (error) => {
   return {error: error.message};
@@ -34,4 +35,20 @@ router.route('/:id')
           .status(errorMsg(error));
       });
   });
+
+router.route('/myBio')
+  .get((request, response) => {
+    console.log(`myBio`);
+    //const templateVars = setTemplateVars(request);
+
+    console.log(request);
+
+
+    response.render('/partials/users/_userBio');
+
+  });
+
+
+
+
 module.exports = router;
