@@ -1,25 +1,24 @@
-<header>
-  <!-- Logo/Hero container -->
-  <div>
-    <h1>Storyteller</h1>
-    <span>Twelve Billon Told</span>
-  </div>
-  <!-- Navigation and user bar -->
-  <nav>
-    <!-- Primary Navigation -->
-    <div>
-      <h4>Visit :</h4>
+<nav class="navbar">
+  <div class="navbar_left">
+    <p class="logo">Storyteller</p>
+    <footer class="menu_bar_left">
+    <div class="menu">
       <% if (!user.id) { %>
         <a href="/most_recent">New</a>
         <a href="/most_popular">Popular</a>
+        <a href="/register">Register</a>
       <% } else { %>
         <a href="/most_recent">New</a>
         <a href="/most_popular">Popular</a>
         <a href="/my_stories">My Stories</a>
       <% } %>
     </div>
-    <!-- Log in/out, notifications -->
-    <div>
+  </footer>
+</div>
+<footer class="menu_bar_right">
+<div class="navbar_right">
+    <input type="hidden" id="user-id">
+    <header>
       <% if (!user.id) { %>
         <div class="login-component">
             <form class="user_login" action="/login/" method="POST">
@@ -43,6 +42,7 @@
       <div><%= user.id %></div>
       <button id="user-logout" class="logout" type="submit">logout</button>
       <% } %>
-    </div>
-  </nav>
-</header>
+    </header>
+  </div>
+    </footer>
+</nav>
