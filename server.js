@@ -58,7 +58,7 @@ app.use('/api', apiRoutes);
 // app.use('/api/users', userApiRoutes);
 // app.use('/api/stories', storiesApiRoutes);
 // app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
+// app.use('/users', usersRoutes);
 
 
 
