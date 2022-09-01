@@ -1,7 +1,21 @@
 // db/queries/stories.js
 const db = require('../connection');
 
-const getStories = (limit = 10) => {
+const getStories = () => {
+  const query = `
+    SELECT
+      *
+    FROM
+      stories
+    ;
+  `;
+  return db.query(query)
+    .then((stories) => {
+      return stories.rows;
+    });
+};
+
+const getStoriesWithLimit = (limit = 10) => {
   const query = `
     SELECT
       *
@@ -59,7 +73,8 @@ const getStoriesByUserId = (id, limit = 10) => {
 };
 
 module.exports = {
-  getStoriesByUserId,
+  getStories,
+  getStoriesWithLimit,
   getStoryById,
-  getStories
+  getStoriesByUserId
 };
