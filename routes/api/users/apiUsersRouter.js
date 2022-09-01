@@ -24,8 +24,8 @@ router.route('/')
 
 
 router.route('/bio')
-  .get((request, response) => {
-    const templateVars = setTemplateVars(request);
+  .get(async(request, response) => {
+    const templateVars = await setTemplateVars(request);
 
     console.log("Uhhh?");
 
