@@ -1,0 +1,32 @@
+<header>
+  <!-- Logo/Hero container -->
+  <div>
+
+  </div>
+  <!-- Navigation and user bar -->
+  <nav>
+    <!-- Primary Navigation -->
+    <div>
+
+    </div>
+    <!-- Log in/out, notifications -->
+    <div>
+
+    </div>
+  </nav>
+
+
+
+
+
+
+
+  <% if (!user.id) { %>
+  <button id="user-login">login</button>
+  <button id="user-registration">registration</button>
+  <% } else { %>
+  <button id="user-profile">profile</button>
+  <button id="user-stories">my stories</button>
+  <button id="user-contributions">my contributions</button>
+  <% } %>
+</header>
