@@ -34,7 +34,7 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
-const storiesApiRoutes = require('./routes/stories-api')
+const storiesApiRoutes = require('./routes/stories-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const db = require('./db/connection');
@@ -114,7 +114,7 @@ app.get('/html', (request, response) => {
       IMPORTED HTML FROM API
     </p>
   `;
-  response.send(html);
+  response.render('partials/_footer');
 });
 
 

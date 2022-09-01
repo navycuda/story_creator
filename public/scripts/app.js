@@ -33,9 +33,18 @@ $(() => {
       .done((response) => {
         console.log('if($userId)',response);
         user = new User(response.user);
-        user.getHtmlDetails().appendTo($leftColumn);
       });
   }
+
+
+  $.ajax({
+    method: 'GET',
+    url: '/html'
+  })
+    .done((response) => {
+      console.log(response);
+      $rightColumn.append($(response));
+    });
 
 
   // Using form and a page reload on so this specific
