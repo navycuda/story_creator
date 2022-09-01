@@ -40,7 +40,6 @@ const usersRoutes = require('./routes/users');
 const db = require('./db/connection');
 
 const userQueries = require('./db/queries/users');
-const { request } = require("express");
 
 /////
 // const login = require("./routes/login");
