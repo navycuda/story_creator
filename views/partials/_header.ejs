@@ -1,32 +1,48 @@
 <header>
   <!-- Logo/Hero container -->
   <div>
-
+    <h1>Storyteller</h1>
+    <span>Twelve Billon Told</span>
   </div>
   <!-- Navigation and user bar -->
   <nav>
     <!-- Primary Navigation -->
     <div>
-
+      <h4>Visit :</h4>
+      <% if (!user.id) { %>
+        <a href="/most_recent">New</a>
+        <a href="/most_popular">Popular</a>
+      <% } else { %>
+        <a href="/most_recent">New</a>
+        <a href="/most_popular">Popular</a>
+        <a href="/my_stories">My Stories</a>
+      <% } %>
     </div>
     <!-- Log in/out, notifications -->
     <div>
-
+      <% if (!user.id) { %>
+        <div class="login-component">
+            <form class="user_login" action="/login/" method="POST">
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="email"
+              />
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+      <% } else { %>
+      <a href="new_story" title="start a new story"> + </a>
+      <div><%= user.id %></div>
+      <button id="user-logout" class="logout" type="submit">logout</button>
+      <% } %>
     </div>
   </nav>
-
-
-
-
-
-
-
-  <% if (!user.id) { %>
-  <button id="user-login">login</button>
-  <button id="user-registration">registration</button>
-  <% } else { %>
-  <button id="user-profile">profile</button>
-  <button id="user-stories">my stories</button>
-  <button id="user-contributions">my contributions</button>
-  <% } %>
 </header>
