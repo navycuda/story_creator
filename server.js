@@ -43,7 +43,7 @@ const apiRoutes = require('./routes/api/apiRouter');
 const usersRoutes = require('./routes/users');
 const db = require('./db/connection');
 
-const userQueries = require('./db/queries/users');
+const userQueries = require('./db/queries/userQueries');
 
 /////
 // const login = require("./routes/login");
