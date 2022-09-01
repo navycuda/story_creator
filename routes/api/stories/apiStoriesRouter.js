@@ -14,7 +14,9 @@ router.route('/')
         response.json(stories);
       })
       .catch((error) => {
-        response.json(error: error.message);
+        response.json(errorMsg(error));
       });
   });
+
+
 module.exports = router;
