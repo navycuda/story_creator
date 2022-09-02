@@ -1,0 +1,13 @@
+<!-- RIGHT COLUMN -->
+<section class="right_column" id="right-column">
+  <!-- Create a new story -->
+  <%- include('stories/_storyNew') %>
+  <!-- Most Popular -->
+  <%- include('stories/_storyBoard', { content: { title:'Most Popular'}}) %>
+  <!-- Most Recent -->
+  <%- include('stories/_storyBoard', { content: { title:'Most Recent'}}) %>
+  <!-- My Favourites -->
+  <% if (user.id) { %>
+    <%- include('stories/_storyBoard', { content: { title:'My Favourites'}}) %>
+  <% } %>
+</section>

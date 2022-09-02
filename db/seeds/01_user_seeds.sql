@@ -1,7 +1,7 @@
 /*
 \i db/seeds/01_user_seeds.sql
 */
-insert into users (name, email, password) values ('Ben Stanfield', 'bstanfield0@wisc.edu', 'lC9M5JeW');
+insert into users (name, email, password) values ('Ben Stanfield', 'user@email.com', 'lC9M5JeW');
 insert into users (name, email, password) values ('Sibby Talboy', 'stalboy1@howstuffworks.com', 'qxsore');
 insert into users (name, email, password) values ('Chaddie Duffil', 'cduffil2@walmart.com', 'UwFjOlQm7v');
 insert into users (name, email, password) values ('Camey Rubinovitch', 'crubinovitch3@furl.net', 'BKnKmfJ');

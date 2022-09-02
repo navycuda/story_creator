@@ -156,3 +156,88 @@
 .fa-plus:hover {
   color: #c77100;
 }
+
+
+// CODE FOR REGISTER PAGE
+
+
+.left_column{
+  display:flex;
+  flex-direction: column;
+  height: auto;
+  width: 91%;
+  font-size: 12px;
+  background-color:#ABA79C
+}
+
+.story_info{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  background-color: #35352d;
+  color:#c77100;
+  height: 70px;
+}
+
+#story_title {
+  font-size: 20px;
+  margin: 5px;
+}
+.user_mostrecent_story{
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.story_image {
+  min-height: 100px;
+  width: 100px;
+  margin-top: 5px;
+  margin-left: 5px;
+  outline: 5px solid #ABA79C;
+}
+
+.story_blurb{
+  margin: 10px;
+  margin-top: 70px;
+}
+
+.user_mostrecent_story p{
+  margin: 0;
+  margin-right: 10px;
+  text-align: right;
+}
+.divider{
+  width: 200px;
+  height: 20px;
+  margin-left: 67px;
+}
+
+.feature_story_footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 4px;
+  background-color: #35352d;
+  height: 20px;
+  font-size: 12px;
+}
+
+.fa-angles-right{
+  color: #b12100;
+  margin-left: 3px;
+  margin-right: 2px;
+}
+
+.fa-angles-right:hover{
+  color: #c77100;
+}
+
+.fa-plus {
+  color: #b12100;
+  margin-right: 5px;
+}
+
+.fa-plus:hover {
+  color: #c77100;
+}

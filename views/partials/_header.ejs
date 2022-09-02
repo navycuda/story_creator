@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <div class="navbar_left">
+    <p class="logo">Storyteller</p>
+    <footer class="menu_bar_left">
+    <div class="menu">
+      <% if (!user.id) { %>
+        <a id="newest-stories" >New</a>
+        <a href="/most_popular">Popular</a>
+        <a href="/register">Register</a>
+      <% } else { %>
+        <a id="newest-stories">New</a>
+        <a href="/most_popular">Popular</a>
+        <a href="/my_stories">My Stories</a>
+      <% } %>
+    </div>
+  </footer>
+</div>
+<footer class="menu_bar_right">
+<div class="navbar_right">
+    <input type="hidden" id="user-id">
+    <header>
+      <% if (!user.id) { %>
+        <div class="login-component">
+            <form class="user_login" action="/login/" method="POST">
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="email"
+              />
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+      <% } else { %>
+      <a href="new_story" title="start a new story"> + </a>
+      <div><%= user.id %></div>
+      <button id="user-logout" class="logout" type="submit">logout</button>
+      <% } %>
+    </header>
+  </div>
+    </footer>
+</nav>

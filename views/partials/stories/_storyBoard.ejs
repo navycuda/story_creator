@@ -1,0 +1,18 @@
+<header class="mp_header">
+  <%= content.title %>
+  <a href="/most_popular" title="see more"><i class="fa-solid fa-plus" id="rc_fa_plus" title="see more"></i></a>
+</header>
+
+<section class="fp_mostpopular">
+  <%- include('_storyHero') %>
+  <section class="mp_group">
+    <!-- Card One -->
+    <%- include('_storyCard', { card: { title: 'Bowsers Castle', likes:7, contributions:17, description:'See no evil, hear no evil' } }) %>
+    <!-- Card Two -->
+    <%- include('_storyCard', { card: { title: 'Smashing Blackrock', likes:8, contributions:18, description:'See no evil, hear no evil' } }) %>
+    <!-- Card Three -->
+    <%- include('_storyCard', { card: { title: 'Curse of Citadel', likes:9, contributions:19, description:'See no evil, hear no evil' } }) %>
+    <!-- Card Four -->
+    <%- include('_storyCard', { card: { title: "Ape's Revenge", likes:10, contributions:20, description:'See no evil, hear no evil' } }) %>
+  </section>
+</section>

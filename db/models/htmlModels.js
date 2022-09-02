@@ -26,11 +26,17 @@ class User {
 
     return result;
   }
-  getHtmlStories() {
-    return $('<span>Stories Placeholder</span>');
-  }
   getHtmlContributions() {
     return $('<span>Contributions Placeholder</span>');
+  }
+  async logout() {
+    await $.ajax({
+      method: 'DELETE',
+      url: '/api/logout/'
+    })
+      .done((response) => {
+        console.log(response);
+      });
   }
 
   /**
@@ -78,16 +84,66 @@ class Story {
   // started_at
   // completed_at
 
-  constructor(name, owner_id) {
-    this.name = name;
-    this.owner_id = owner_id;
-
-    const timeStamp = Date.now();
-
-    this.created_at = timeStamp;
-    this.started_at = timeStamp;
-    this.completed_at = timeStamp;
+  constructor(db_start) {
+    console.log(`in User constructor :`, db_user);
+    for (const [ key, value ] of Object.entries(db_user)) {
+      this[key] = value;
+    }
   }
+
+  static async getStoriesByUserId(user_id, callback) {
+    const searchUser = {};
+    await $.ajax({
+      method: 'GET',
+      url: `/api/users/${user_id}`
+    })
+      .done((response) => {
+        searchUser.id = response.user.id;
+        searchUser.name = response.user.name;
+        console.log(`ajax nested user`, response);
+      });
+    await $.ajax({
+      method: 'GET',
+      url: `/api/stories/${searchUser.id}`
+    })
+      .done((stories) => {
+        const $myStories = $('<div>');
+        const $title = $('<h2>').text(`The stories of ${searchUser.name}`);
+        $myStories.append($title);
+        console.log(`Is there stories?`,stories);
+        console.log('stories.length = ', stories.length);
+        if (stories.length === 0) {
+          return callback($('<span>What do you mean I have no stories?!</span>'));
+        }
+
+        for (let s = 0; s < stories.length; s++) {
+          console.log('Each individual story\n',stories[s]);
+          const $story = $('<div>');
+          const $storyTitle = $('<h3>').text(stories[s].name);
+
+          $story.append($storyTitle);
+
+          $myStories.append($story);
+        }
+        return callback($myStories);
+      });
+
+  }
+
+
+
+  static async getNewStories(element) {
+    await $.ajax({
+      method: 'GET',
+      url: 'api/stories/blocks'
+    })
+      .done((storyBlock) => {
+        const $block = $(storyBlock);
+        element.append($block);
+      });
+  }
+
+
 }
 
 // Currently there is some use of these classes server side.

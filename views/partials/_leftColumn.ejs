@@ -1,0 +1,8 @@
+<!-- LEFT COLUMN -->
+<section class="left_column" id="left-column">
+  <% if (!user.id) { %>
+    <%- include('_welcome') %>
+  <% } else { %>
+    <%- include('users/_userProfile') %>
+  <% } %>
+  </section>

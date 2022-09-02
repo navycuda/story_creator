@@ -34,12 +34,6 @@ The story teller application based losely around D&D campaign creation.
           Get the master to the point that we can branch off for 
           individual development goals
     [ ] - Conventions
-<<<<<<< HEAD
-      [ ] - git
-      [ ] - naming
-      [ ] - developer overlap 
-    [ ] - scheduling and deadlines for features
-=======
       [X] - git
         Lots of communications!
         sperate branches,
@@ -47,7 +41,6 @@ The story teller application based losely around D&D campaign creation.
       [ ] - naming
       [X] - developer overlap 
     [X] - scheduling and deadlines for features
->>>>>>> feature/html
 
 ## Goals for Monday tailgate
 
@@ -106,7 +99,13 @@ database tables have been modeled as objects.  Each object will be responsible f
 
 ### Some other things to think about / TODO
 
-  [ ] - install cookie-sessions for login
+  [X] - install cookie-sessions for login
   [ ] - decide if completing the login/registration page 
         or taking the easy way out
 
+### Tuesday Aug 30, 2022
+
+  [ ] - Status update
+  [ ] - Start thinking about the possible database queries
+  [ ] - Stories as a list
+  [ ] - Story as an item
