@@ -4,11 +4,11 @@
     <footer class="menu_bar_left">
     <div class="menu">
       <% if (!user.id) { %>
-        <a >New</a>
+        <a id="newest-stories" >New</a>
         <a href="/most_popular">Popular</a>
         <a href="/register">Register</a>
       <% } else { %>
-        <a href="/most_recent">New</a>
+        <a id="newest-stories">New</a>
         <a href="/most_popular">Popular</a>
         <a href="/my_stories">My Stories</a>
       <% } %>
