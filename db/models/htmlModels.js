@@ -129,6 +129,21 @@ class Story {
       });
 
   }
+
+
+
+  static async getNewStories(element) {
+    await $.ajax({
+      method: 'GET',
+      url: 'api/stories/blocks'
+    })
+      .done((storyBlock) => {
+        const $block = $(storyBlock);
+        element.append($block);
+      });
+  }
+
+
 }
 
 // Currently there is some use of these classes server side.
