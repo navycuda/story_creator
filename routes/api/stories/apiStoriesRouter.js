@@ -31,7 +31,12 @@ router.route('/limit=:limit')
   });
 
 
+router.route('/blocks')
+  .get((request, response) => {
 
+    response.render('partials/stories/_storyPage');
+
+  });
 
 
 module.exports = router;
