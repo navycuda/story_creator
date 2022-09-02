@@ -1,13 +1,108 @@
-   <!-- RIGHT COLUMN -->
 <section class="right_column" id="right-column">
-  <!-- Create a new story -->
-<div class="startastory"><%- include('stories/_storyNew') %></div>
-  <!-- Most Popular -->
-<article class="mp"><%- include('stories/_storyBoard', { content: { title:'Most Popular'}}) %></article>
-  <!-- Most Recent -->
- <article class="mr"><%- include('stories/_storyBoard', { content: { title:'Most Recent'}}) %></article>
-  <!-- My Favourites -->
- <% if (user.id) { %>
-    <article class="mr"><%- include('stories/_storyBoard', { content: { title:'My Favourites'}}) %></article>
-  <% } %>
-</section>
+  <section class="right_column" id="right-column">
+    <div class="startastory"><%- include('stories/_storyNew') %></div>
+    <article class="mp"><%- include('stories/_storyBoard', { content: { title:'Most Popular'}}) %></article>
+    <article class="mr"><%- include('stories/_storyBoard', { content: { title:'Most Recent'}}) %></article>
+    <% if (user.id) { %>
+      <article class="mr"><%- include('stories/_storyBoard', { content: { title:'My Favourites'}}) %></article>
+    <% } %>
+  </section>
+
+  <!-- <section class="right_column" id="right-column">
+  <section class="story_container">
+    <div class="title_header">
+      <img
+        src="https://cdnb.artstation.com/p/assets/images/images/046/945/415/large/sean-bryant-fantasy-mountain-sketchfinal-1.jpg?1646354223"/ class="full_story_image">
+      <div class="full_story_info">
+        <p class="story_text">The Merchant of Bones</p>
+        <p class="story_user">username</p>
+    </div>
+    </div>
+    <article class="full_story_details">
+      <div class="characters">Characters: Ingrid - barkeep, sarcastic, red hair</div>
+      <div class="world-building">World-building: In my world it's always night.</div>
+    </article>
+    <article class="story_section">
+        The Backbreaker. The Chain Keeper. The Merchant of Bones. I'm known by many names down here in the darkness. The winding caverns of my lair bored into rock not by machine, or even beast, but the grime-encrusted hands of men clasping splintering wooden picks. These mines run deep. Squalid, narrow and damp, their craggy walls glisten with a sweat that permeates the air like a thick mist. It doesn`t matter that no sun nor heat ever worms its way into this forbidding place, illuminated only by flickering firelight of torches clamped to the bare rock by rusting iron brackets; the graft is so hard no worker fails to leave without a sodden sheen across their filth-ridden brow. Not if I can help it, at least.
+
+  To them, I`m like a fable. A ghost story taken true form. A demon or a bad omen haunting their days. To those above ground though, I`m known by a different name: the foreman. The work is tough, and my masters demanding. But I find I`m delivering more of what they need every day, and I`m praised for it, so I push my drones harder, and become more beast than man in their eyes. The harder I push, the more I become a dread to the workers, but the more they dread me, the happier my masters are.
+  </article>
+  <footer class="full_story_footer">
+    <div class="icons">
+      20 <i class="fa-solid fa-heart" title="likes"></i>
+      2 <i class="fa-solid fa-book" title="contributions"></i>
+      </div>
+  </footer>
+
+  </section>
+
+  <section class="story_container">
+  <header class="contribution_header">contributed by: username</header>
+  <div class="contribution-section">
+    <p>
+      The dread is needed. Without their fear of me, the mines would never deliver all of what my masters desire. Without the Merchant of Bones, our entire world could fall apart. Then where would we be? There is nothing in this bitter, ice-encrusted corner of the world but the work of the mines. No fjords to fish, no fields to till, no timber to chop. I am the whetstone that grinds at the axe that is my home; without me, it would grow dull and lifeless. Without me working these dogs until their hands shook and the jagged floor of the mines ran with their dribbling vomit, the masters would leave, and the world would stop turning
+    </p>
+  </div>
+  </article>
+  <footer class="contribution_footer">
+    <div class="icons">
+    3 <i class="fa-solid fa-heart" title="likes"></i>
+    </div>
+  </footer>
+  </section>
+  <section class="story_container">
+    <header class="contribution_header">contributed by: username</header>
+    <div class="contribution-section">
+      <p>
+        Emerging from the mines, after the sun has already fallen, bright moonlight clutches the chill air, rebounding off a great and familiar cliff face that looms behind me, gently bathing the world below in a soft blue light.
+
+  I take in a breath so crisp and clean I cough it straight back out again. I stay beneath the stony surface of my mine so long that when I leave it, I feel as if the space that has opened up around me is a maw threatening to swallow me whole. This open world always seems alien to me, despite the fact I walk the same path every night and every morning. I might be first into the mine and last out, but it is not my home, a place I am eager to get back to now. A small house on the edge of town; far from people, far the from noise, tight and narrow and quiet, my home is just how I like it. I rush my way up the crest that lays between mining pit and the cityscape, desperate for the clutching embrace of walls. The ground beneath my feet is a frozen slurry of snow met with churned up mud from the days work in the yard
+  </p>
+  </div>
+  </article>
+  <footer class="contribution_footer">
+  <div class="icons">
+  4 <i class="fa-solid fa-heart" title="likes"></i>
+  </div>
+  </footer>
+  </section>
+
+    <button type="button" class="collapsible">Contribute to this story</button>
+      <div >
+  <form class="submit story_container " action="/id:/submit" method="POST">
+        <div class="dropdown">
+          <button class="dropbtn event-btn">Event type:</button>
+          <div class="dropdown-content">
+            <a href="#">Character</a>
+            <a href="#">World-Building</a>
+            <a href="#">Character-building</a>
+          </div>
+      </div>
+        <label for="story_start" class="contribution_text">Contribution:</label>
+        <input
+          class="story_input bkg"
+          type="text"
+          name="story"
+        />
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    </section>
+  </section>
+    <script>
+      const coll = document.getElementsByClassName("collapsible");
+      let i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          let content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script> -->
+ -->

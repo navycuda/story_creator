@@ -10,7 +10,7 @@
   position: fixed;
   height: 200px;
   width: 100%;
-  background-color: #5E4C3E;
+  background-color: #594739;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -25,9 +25,7 @@
 }
 
 .logo {
-  display: flex;
-  font-size: 50px;
-  height: 20px;
+  height: 180px;
 }
 
 .menu_bar_right{
@@ -63,10 +61,23 @@
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  height: 1.5em;
   font-size: 12px;
 }
 
-.logout {
+.username_logout {
   display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  height: 20px;
+}
+
+.username{
+  padding-top: 5px;
+}
+
+.logout{
+  height: 20px;
+  font-size: 12px;
 }

@@ -47,16 +47,16 @@
   flex-direction: column;
   border: 1px solid #998d77;
   background-color: #ABA79C;
-  height: 250px;
   width: 350px;
   min-width: 350px;
+  height: 300px;
   margin: 5px;
 }
 
 .story_blurb {
   padding: 10px;
   padding-top: 0;
-  margin-top: 40px;
+  margin: 75px;
 }
 
 .story_footer {
@@ -67,6 +67,7 @@
   color: #c77100;
   height: 20px;
   padding: 5px;
+  margin-top: 20px;
 }
 
 .fa-angles-right {
@@ -91,4 +92,9 @@
   margin-top: 0px;
   margin-left: 0.4rem;
   color: #c77100;
+}
+
+.mp_header {
+  margin-top: 20px;
+  height: 60px;
 }

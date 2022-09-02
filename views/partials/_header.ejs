@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="navbar_left">
-    <p class="logo">Storyteller</p>
+    <img src="http://supersmellasoaps.ca/images/headerImage.png" class="logo">
     <footer class="menu_bar_left">
     <div class="menu">
       <a href="/" >Home</a>
@@ -38,10 +38,11 @@
             </form>
         </div>
       <% } else { %>
-      <a href="new_story" title="start a new story"> + </a>
-      <div><%= user.id %></div>
+      <div class="username_logout">
+        <div class="username"><%= user.name %></div>
       <button id="user-logout" class="logout" type="submit">logout</button>
       <% } %>
+      </div>
     </header>
   </div>
     </footer>
