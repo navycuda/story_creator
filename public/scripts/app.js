@@ -55,7 +55,7 @@ $(() => {
 
 
   // $(document).click((event) => {
-  //   alert(event.target.className);
+  //   console.log(event.target.className);
   // });
 
 
@@ -75,16 +75,40 @@ $(() => {
       $rightColumn.append($element);
       $linkToStory = $element.find('.link-to-story');
 
-      console.log($linkToStory.attr('href'));
+      console.log('single', $linkToStory);
+      console.log('single length', $linkToStory.length);
 
-      $linkToStory.each((index) => {
-        console.log($(this).attr('href'));
+
+      $linkToStory.each((i,v) => {
+
+        $(this).click((e) => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          console.log('clicked', $(this).attr('href'));
+
+          $.ajax({
+            method: 'GET',
+            url: v
+          })
+            .done((story) => {
+              $rightColumn.empty();
+              $(story).appendTo($rightColumn);
+            });
+
+
+
+        });
+
+        console.log(i + ':' + v);
+
       });
 
-      $linkToStory.on('click', (e) => {
-        e.preventDefault();
-        console.log($(this));
-      });
+      // $linkToStory.on('click', (e) => {
+
+      //     e.preventDefault();
+      //     console.log(this);
+      //   });
+      // });
       // $linkToStory.click((e) => {
       //   $(this).click((e) => {
       //     e.preventDefault();
