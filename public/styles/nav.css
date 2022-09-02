@@ -26,8 +26,9 @@
 
 .logo {
   display: flex;
-  font-size: 50px;
-  height: 20px;
+  background-image: url("/Untitled_Artwork.png");
+  height: 100%;
+  width: 100%;
 }
 
 .menu_bar_right {
