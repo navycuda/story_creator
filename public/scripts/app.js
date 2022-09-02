@@ -24,6 +24,8 @@ $(() => {
   const $rightColumn = $('#right-column');
 
   const $newestStories = $('#newest-stories');
+  const $popularStories = $('#most-popular');
+  const $myStories = $('#my-stories');
 
 
   let user;
