@@ -52,10 +52,23 @@ $(() => {
   // });
 
   $newestStories.on('click', () => {
-
     $rightColumn.empty();
     Story.getNewStories($rightColumn);
   });
+
+  $popularStories.on('click', () => {
+    $rightColumn.empty();
+    Story.getPopularStories($rightColumn);
+  });
+
+  $myStories.on('click', () => {
+    $rightColumn.empty();
+    Story.getStoriesByUserId(user.id, $rightColumn);
+  });
+
+
+
+
 
   $userLogout.on('click', () => {
     window.location.replace('/logout');
