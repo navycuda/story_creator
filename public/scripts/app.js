@@ -23,7 +23,8 @@ $(() => {
   const $leftColumn = $('#left-column');
   const $rightColumn = $('#right-column');
 
-  const $newestStoires = $('#newest-stories');
+  const $newestStories = $('#newest-stories');
+
 
   let user;
 
@@ -48,13 +49,10 @@ $(() => {
   //   alert('login LogOn friend!');
   // });
 
-  $newestStoires.on('click', () => {
+  $newestStories.on('click', () => {
 
     $rightColumn.empty();
-
     Story.getNewStories($rightColumn);
-
-
   });
 
   $userLogout.on('click', () => {
