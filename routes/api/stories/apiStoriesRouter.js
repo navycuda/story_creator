@@ -30,6 +30,11 @@ router.route('/limit=:limit')
       });
   });
 
+router.route('/id=:id')
+  .get((request, response) => {
+    response.render('partials/stories/_story');
+  });
+
 
 
 router.route('/new')
@@ -291,4 +296,7 @@ router.route('/mine/:id')
     response.render('partials/stories/_storyPage', templateVars);
 
   });
+
+
+
 module.exports = router;
