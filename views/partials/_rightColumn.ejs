@@ -1,13 +1,13 @@
-<!-- RIGHT COLUMN -->
+   <!-- RIGHT COLUMN -->
 <section class="right_column" id="right-column">
   <!-- Create a new story -->
-  <div class="startastory"><%- include('stories/_storyNew') %></div>
+<div class="startastory"><%- include('stories/_storyNew') %></div>
   <!-- Most Popular -->
-  <article class="mp"><%- include('stories/_storyBoard', { content: { title:'Most Popular'}}) %></article>
+<article class="mp"><%- include('stories/_storyBoard', { content: { title:'Most Popular'}}) %></article>
   <!-- Most Recent -->
-  <article class="mr"><%- include('stories/_storyBoard', { content: { title:'Most Recent'}}) %></article>
+ <article class="mr"><%- include('stories/_storyBoard', { content: { title:'Most Recent'}}) %></article>
   <!-- My Favourites -->
-  <% if (user.id) { %>
+ <% if (user.id) { %>
     <article class="mr"><%- include('stories/_storyBoard', { content: { title:'My Favourites'}}) %></article>
   <% } %>
 </section>
