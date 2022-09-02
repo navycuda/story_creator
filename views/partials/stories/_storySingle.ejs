@@ -12,6 +12,8 @@
       <%= story.likes %> <i class="fa-solid fa-heart" title="likes"></i>
       <%= story.contributions %> <i class="fa-solid fa-book" title="contributions"></i>
       </div>
-    <a href="/story_id"><i class="fa-solid fa-angles-right" title="read the whole story"></i></a>
+    <a class="link-to-story" href="/api/stories/id=<%= story.id %>">
+      <i class="fa-solid fa-angles-right" title="read the whole story"></i>
+    </a>
   </footer>
 </section>
