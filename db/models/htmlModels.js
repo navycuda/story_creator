@@ -143,6 +143,17 @@ class Story {
       });
   }
 
+  static async getPopularStories(element) {
+    await $.ajax({
+      method: 'GET',
+      url: 'api/stories/blocks'
+    })
+      .done((storyBlock) => {
+        const $block = $(storyBlock);
+        element.append($block);
+      });
+  }
+
 
 }
 
