@@ -23,6 +23,8 @@ $(() => {
   const $leftColumn = $('#left-column');
   const $rightColumn = $('#right-column');
 
+  const $newestStoires = $('#newest-stories');
+
   let user;
 
   if ($userId) {
@@ -45,6 +47,15 @@ $(() => {
   //   //User.getHtmlLogin().appendTo($contentArea);
   //   alert('login LogOn friend!');
   // });
+
+  $newestStoires.on('click', () => {
+
+    $rightColumn.empty();
+
+    Story.getNewStories($rightColumn);
+
+
+  });
 
   $userLogout.on('click', () => {
     window.location.replace('/logout');
