@@ -3,14 +3,15 @@
     <p class="logo">Storyteller</p>
     <footer class="menu_bar_left">
     <div class="menu">
+      <a href="/" >Home</a>
       <% if (!user.id) { %>
         <a id="newest-stories" >New</a>
-        <a href="/most_popular">Popular</a>
-        <a href="/register">Register</a>
+        <a id="most-popular">Popular</a>
+        <a id="register">Register</a>
       <% } else { %>
         <a id="newest-stories">New</a>
-        <a href="/most_popular">Popular</a>
-        <a href="/my_stories">My Stories</a>
+        <a id="most-popular">Popular</a>
+        <a id="my-stories">My Stories</a>
       <% } %>
     </div>
   </footer>

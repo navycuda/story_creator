@@ -23,7 +23,10 @@ $(() => {
   const $leftColumn = $('#left-column');
   const $rightColumn = $('#right-column');
 
-  const $newestStoires = $('#newest-stories');
+  const $newestStories = $('#newest-stories');
+  const $popularStories = $('#most-popular');
+  const $myStories = $('#my-stories');
+
 
   let user;
 
@@ -48,14 +51,24 @@ $(() => {
   //   alert('login LogOn friend!');
   // });
 
-  $newestStoires.on('click', () => {
-
+  $newestStories.on('click', () => {
     $rightColumn.empty();
-
     Story.getNewStories($rightColumn);
-
-
   });
+
+  $popularStories.on('click', () => {
+    $rightColumn.empty();
+    Story.getPopularStories($rightColumn);
+  });
+
+  $myStories.on('click', () => {
+    $rightColumn.empty();
+    Story.getStoriesByUserId(user.id, $rightColumn);
+  });
+
+
+
+
 
   $userLogout.on('click', () => {
     window.location.replace('/logout');

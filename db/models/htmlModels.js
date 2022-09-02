@@ -91,7 +91,7 @@ class Story {
     }
   }
 
-  static async getStoriesByUserId(user_id, callback) {
+  static async getStoriesByUserId(user_id, element) {
     const searchUser = {};
     await $.ajax({
       method: 'GET',
@@ -104,28 +104,11 @@ class Story {
       });
     await $.ajax({
       method: 'GET',
-      url: `/api/stories/${searchUser.id}`
+      url: `/api/stories/mine/${searchUser.id}`
     })
       .done((stories) => {
-        const $myStories = $('<div>');
-        const $title = $('<h2>').text(`The stories of ${searchUser.name}`);
-        $myStories.append($title);
-        console.log(`Is there stories?`,stories);
-        console.log('stories.length = ', stories.length);
-        if (stories.length === 0) {
-          return callback($('<span>What do you mean I have no stories?!</span>'));
-        }
-
-        for (let s = 0; s < stories.length; s++) {
-          console.log('Each individual story\n',stories[s]);
-          const $story = $('<div>');
-          const $storyTitle = $('<h3>').text(stories[s].name);
-
-          $story.append($storyTitle);
-
-          $myStories.append($story);
-        }
-        return callback($myStories);
+        const $myStories = $(stories);
+        element.append($myStories);
       });
 
   }
@@ -135,7 +118,18 @@ class Story {
   static async getNewStories(element) {
     await $.ajax({
       method: 'GET',
-      url: 'api/stories/blocks'
+      url: 'api/stories/new'
+    })
+      .done((storyBlock) => {
+        const $block = $(storyBlock);
+        element.append($block);
+      });
+  }
+
+  static async getPopularStories(element) {
+    await $.ajax({
+      method: 'GET',
+      url: 'api/stories/popular'
     })
       .done((storyBlock) => {
         const $block = $(storyBlock);

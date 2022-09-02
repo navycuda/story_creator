@@ -31,12 +31,25 @@ router.route('/limit=:limit')
   });
 
 
-router.route('/blocks')
+router.route('/new')
   .get((request, response) => {
 
     response.render('partials/stories/_storyPage');
 
   });
 
+router.route('/popular')
+  .get((request, response) => {
 
+    response.render('partials/stories/_storyPage');
+
+  });
+
+router.route('/mine/:id')
+
+  .get((request, response) => {
+
+    response.render('partials/stories/_storyPage');
+
+  });
 module.exports = router;
