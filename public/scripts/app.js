@@ -21,11 +21,13 @@ $(() => {
 
   const $contentArea = $('main');
   const $leftColumn = $('#left-column');
-  const $rightColumn = $('#right-column');
+  let $rightColumn = $('#right-column');
 
   const $newestStories = $('#newest-stories');
   const $popularStories = $('#most-popular');
   const $myStories = $('#my-stories');
+
+  let $linkToStory = $('.link-to-story');
 
 
   let user;
@@ -51,6 +53,12 @@ $(() => {
   //   alert('login LogOn friend!');
   // });
 
+
+  // $(document).click((event) => {
+  //   console.log(event.target.className);
+  // });
+
+
   $newestStories.on('click', () => {
     $rightColumn.empty();
     Story.getNewStories($rightColumn);
@@ -63,7 +71,52 @@ $(() => {
 
   $myStories.on('click', () => {
     $rightColumn.empty();
-    Story.getStoriesByUserId(user.id, $rightColumn);
+    Story.getStoriesByUserId(user.id, ($element) => {
+      $rightColumn.append($element);
+      $linkToStory = $element.find('.link-to-story');
+
+      console.log('single', $linkToStory);
+      console.log('single length', $linkToStory.length);
+
+
+      $linkToStory.each((i,v) => {
+
+        $(this).click((e) => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          console.log('clicked', $(this).attr('href'));
+
+          $.ajax({
+            method: 'GET',
+            url: v
+          })
+            .done((story) => {
+              $rightColumn.empty();
+              $(story).appendTo($rightColumn);
+            });
+
+
+
+        });
+
+        console.log(i + ':' + v);
+
+      });
+
+      // $linkToStory.on('click', (e) => {
+
+      //     e.preventDefault();
+      //     console.log(this);
+      //   });
+      // });
+      // $linkToStory.click((e) => {
+      //   $(this).click((e) => {
+      //     e.preventDefault();
+      //     console.log('object object', this);
+      //     console.log(`e`,e);
+      //   });
+      // });
+    });
   });
 
 

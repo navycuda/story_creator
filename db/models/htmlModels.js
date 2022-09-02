@@ -91,7 +91,7 @@ class Story {
     }
   }
 
-  static async getStoriesByUserId(user_id, element) {
+  static async getStoriesByUserId(user_id, callback) {
     const searchUser = {};
     await $.ajax({
       method: 'GET',
@@ -108,7 +108,7 @@ class Story {
     })
       .done((stories) => {
         const $myStories = $(stories);
-        element.append($myStories);
+        callback($myStories);
       });
 
   }

@@ -44,10 +44,10 @@ app.use(express.static("public"));
 
 const apiRoutes = require('./routes/api/apiRouter');
 
-const usersRoutes = require('./routes/users');
+const storyRoutes = require('./routes/storiesRouter');
+
 const db = require('./db/connection');
 
-const userQueries = require('./db/queries/userQueries');
 
 /////
 // const login = require("./routes/login");
@@ -59,6 +59,7 @@ const userQueries = require('./db/queries/userQueries');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 
 app.use('/api', apiRoutes);
+app.use('/story/', storyRoutes);
 // app.use('/api/users', userApiRoutes);
 // app.use('/api/stories', storiesApiRoutes);
 // app.use('/api/widgets', widgetApiRoutes);

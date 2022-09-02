@@ -1,4 +1,5 @@
-<header class="mp_header"><p class="header_title">Most Popular</p></header>
-<%- include('_storyBlock') %>
-<%- include('_storyBlock') %>
-<%- include('_storyBlock') %>
+<header class="mp_header"><p class="header_title"><%= storyPage.title %></p></header>
+
+<% for (const storyBlock of storyPage.storyBlocks) { %>
+  <%- include('_storyBlock', storyBlock) %>
+<% } %>
